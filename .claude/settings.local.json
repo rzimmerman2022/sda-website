@@ -8,7 +8,20 @@
       "Bash(npm run build:*)",
       "Bash(git init:*)",
       "Bash(git config:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git remote add:*)",
+      "Bash(git branch:*)",
+      "Bash(git push:*)",
+      "Bash(vercel --version:*)",
+      "Bash(vercel:*)",
+      "Bash(cmd.exe /c DEPLOY_NOW.bat)",
+      "Bash(powershell.exe -ExecutionPolicy Bypass -File Deploy-Vercel.ps1)",
+      "Bash(export VERCEL_TOKEN=PvFJaCVjjqOiShWwKiY0egx9:*)",
+      "Bash(set VERCEL_TOKEN=PvFJaCVjjqOiShWwKiY0egx9)",
+      "Bash(powershell.exe -ExecutionPolicy Bypass -File deploy-with-token.ps1)",
+      "Bash(curl:*)",
+      "Bash(nslookup:*)"
     ],
     "deny": [],
     "ask": []
