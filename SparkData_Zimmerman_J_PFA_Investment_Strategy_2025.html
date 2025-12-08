@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Financial Security Plan - SparkData Analytics</title>
+    <link href="https://fonts.googleapis.com/css2?family=Georgia&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        :root {
+            --primary: #004d40; /* Deep, calming green */
+            --secondary: #00796b; /* Lighter teal */
+            --accent: #ff7043; /* Warm coral for gentle reminders */
+            --light: #f5f5f5; /* Soft gray background */
+            --dark: #333333; /* Dark text for readability */
+            --sand: #f4e8d1; /* Warm, comforting background for key insights */
+            --blue-light: #e0f7fa; /* Very light blue for information boxes */
+            --blue-dark: #006064; /* Dark blue for information box headers */
+        }
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.8;
+            color: var(--dark);
+            background-color: var(--light);
+            min-height: 100vh;
+        }
+        
+        /* Company Header */
+        .company-header {
+            background: white;
+            border-bottom: 2px solid #e0e0e0;
+            padding: 15px 0;
+            margin-bottom: 20px;
+        }
+        
+        .company-header-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .company-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        .company-name {
+            font-size: 0.9rem;
+            color: #6b8cae;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        .document-type {
+            font-size: 0.85rem;
+            color: #8e9aaf;
+            text-align: right;
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        /* Company Footer */
+        .company-footer {
+            background: white;
+            border-top: 2px solid #e0e0e0;
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+        
+        .company-footer-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+        
+        .footer-info {
+            font-size: 0.85rem;
+            color: #8e9aaf;
+            margin-bottom: 10px;
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        .footer-disclaimer {
+            font-size: 0.8rem;
+            color: #a0a0a0;
+            font-style: italic;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.5;
+            font-family: 'Georgia', serif;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        /* Hero Section */
+        .hero {
+            background-color: white;
+            color: var(--dark);
+            padding: 60px 40px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-left: 8px solid var(--primary);
+        }
+        .hero h1 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+        .reassurance-box {
+            background-color: var(--sand);
+            padding: 25px;
+            border-radius: 10px;
+            font-style: italic;
+            font-size: 1.2rem;
+            text-align: center;
+            color: var(--primary);
+        }
+        /* Navigation Tabs */
+        .nav-tabs {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+            overflow-x: auto;
+            padding-bottom: 10px;
+        }
+        .nav-tab {
+            padding: 12px 20px;
+            background: white;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            border: 2px solid var(--secondary);
+            color: var(--secondary);
+            font-weight: bold;
+            font-family: 'Roboto', sans-serif;
+        }
+        .nav-tab:hover {
+            background-color: var(--secondary);
+            color: white;
+        }
+        .nav-tab.active {
+            background-color: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        /* Content Sections */
+        .section {
+            display: none;
+            animation: fadeIn 0.5s ease-out;
+        }
+        .section.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        /* Cards */
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .card-header {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--light);
+        }
+        .card-title {
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+        /* Information Boxes */
+        .info-box {
+            background-color: var(--blue-light);
+            border-radius: 10px;
+            margin: 30px 0;
+            overflow: hidden;
+        }
+        .info-header {
+            background-color: var(--blue-dark);
+            color: white;
+            padding: 15px 25px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Roboto', sans-serif;
+        }
+        .info-content {
+            padding: 25px;
+            font-size: 1rem;
+            color: var(--blue-dark);
+        }
+        /* Pace Reminder */
+        .pace-reminder {
+            background-color: var(--accent);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 30px 0;
+            font-size: 1.1rem;
+            text-align: center;
+            font-style: italic;
+        }
+        /* Tables */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-family: 'Roboto', sans-serif;
+        }
+        .data-table th {
+            background: var(--primary);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 700;
+        }
+        .data-table td {
+            padding: 15px;
+            border-bottom: 1px solid var(--light);
+        }
+        .data-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        /* Lists */
+        ul, ol {
+            margin-left: 25px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        /* Key Insight Box */
+        .key-insight {
+            background-color: var(--sand);
+            padding: 30px;
+            border-radius: 10px;
+            margin: 30px 0;
+            border-left: 6px solid var(--primary);
+        }
+        .key-insight h4 {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+        .timeline-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        .timeline-marker {
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            margin-right: 30px;
+            z-index: 2;
+            flex-shrink: 0;
+            font-family: 'Roboto', sans-serif;
+        }
+        .timeline-content {
+            flex: 1;
+            background: #f9f9f9;
+            padding: 25px;
+            border-radius: 10px;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 24px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--secondary);
+        }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-tabs {
+                flex-wrap: wrap;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .card {
+                padding: 25px;
+            }
+            .comparison-grid {
+                grid-template-columns: 1fr !important;
+            }
+        }
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .comparison-card {
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .comparison-card.yours {
+            background-color: #e8f5e9;
+            border: 2px solid #4caf50;
+        }
+        .comparison-card.others {
+            background-color: #ffebee;
+            border: 2px solid #f44336;
+        }
+        .comparison-card h4 {
+            margin-bottom: 15px;
+        }
+        blockquote {
+            background: #f9f9f9;
+            border-left: 10px solid #ccc;
+            margin: 1.5em 10px;
+            padding: 0.5em 10px;
+            quotes: "\201C""\201D""\2018""\2019";
+            font-style: italic;
+        }
+        
+        @media print {
+            .company-header {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+            }
+            
+            .company-footer {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+            }
+            
+            .container {
+                margin-top: 80px;
+                margin-bottom: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Company Header -->
+    <div class="company-header">
+        <div class="company-header-content">
+            <div class="company-logo">
+                <div class="logo-icon">S</div>
+                <div>
+                    <div class="company-name">SPARKDATA ANALYTICS • FINANCIAL INTELLIGENCE SOLUTIONS</div>
+                </div>
+            </div>
+            <div class="document-type">
+                Personal Investment Analysis<br>
+                Prepared: 2025
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="hero">
+            <h1>A Gentle Guide to Your Financial Security</h1>
+            <p>
+                Mom, at 57, you're in a great position to build a secure retirement. This guide is designed to help you understand how to make your money work for you, step-by-step, without any pressure or confusing jargon.
+            </p>
+            <div class="reassurance-box">
+                The most important message: You're already okay. You have savings, you have time, and you can't mess this up.
+            </div>
+        </div>
+        <div class="nav-tabs">
+            <div class="nav-tab active" onclick="showSection('start')">🛋️ Start Here</div>
+            <div class="nav-tab" onclick="showSection('understanding')">💡 Understanding</div>
+            <div class="nav-tab" onclick="showSection('strategy')">🔬 Why This Works</div>
+            <div class="nav-tab" onclick="showSection('steps')">✅ Simple Steps</div>
+            <div class="nav-tab" onclick="showSection('future')">📅 Future Income</div>
+            <div class="nav-tab" onclick="showSection('protection')">🛡️ Protection</div>
+            <div class="nav-tab" onclick="showSection('family')">🎁 Bonus</div>
+        </div>
+
+        <div id="start" class="section active">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">You're Already in a Good Position</h2>
+                </div>
+                <p>
+                    It's completely normal to feel overwhelmed when thinking about investments, especially if it's new to you. The good news is that you don't need to become a financial expert to have a secure retirement.
+                </p>
+
+                <div class="info-box">
+                    <div class="info-header">🌟 Your Advantages</div>
+                    <div class="info-content">
+                        <ul>
+                            <li><strong>Time:</strong> You have 8 years of earning power remaining before retirement.</li>
+                            <li><strong>Savings:</strong> You have a solid foundation of savings to build upon.</li>
+                            <li><strong>Social Security:</strong> This will provide a guaranteed income stream for life.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>Your Current Snapshot (Updated & Accurate)</h3>
+                <p>Here's exactly where things stand right now. Knowing these numbers is the first step.</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Account</th>
+                            <th>Amount</th>
+                            <th>Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>BMO Checking</td>
+                            <td>$205,000</td>
+                            <td>Cash</td>
+                        </tr>
+                        <tr>
+                            <td>Wells Fargo Checking</td>
+                            <td>$35,000</td>
+                            <td>Cash</td>
+                        </tr>
+                        <tr>
+                            <td>NNN REIT (460 shares)</td>
+                            <td>$26,000</td>
+                            <td>Stock</td>
+                        </tr>
+                        <tr>
+                            <td>PepsiCo (45 shares)</td>
+                            <td>$6,800</td>
+                            <td>Stock</td>
+                        </tr>
+                        <tr style="font-weight: bold; background-color: var(--sand);">
+                            <td>Total Assets</td>
+                            <td>$273,000</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="key-insight">
+                    <h4>The Goal Isn't to Get Rich Quick - It's to Stay Secure Forever</h4>
+                    <p>
+                        We're going to use a slow, steady, and proven approach. Think of it like planting a garden: we prepare the soil, plant the seeds, and then let nature do the work over time.
+                    </p>
+                </div>
+
+                <div class="pace-reminder">
+                    Remember: You can read this guide at your own pace. Take a break whenever you need. There's no rush.
+                </div>
+            </div>
+        </div>
+
+        <div id="understanding" class="section">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Understanding Your Money</h2>
+                </div>
+                <p>Let's break down some basic concepts in plain English.</p>
+
+                <h3>The Problem with Cash in Checking Accounts</h3>
+                <p>
+                    Right now, most of your money ($240,000) is sitting in checking accounts earning almost no interest. While this feels safe, it's actually losing value every day due to inflation.
+                </p>
+
+                <div class="info-box">
+                    <div class="info-header">🎈 What is Inflation?</div>
+                    <div class="info-content">
+                        <p>
+                            Inflation means prices go up over time. A dollar today buys less than it did yesterday. If your money isn't growing at least as fast as inflation (currently around 3%), you're effectively getting poorer.
+                        </p>
+                        <p style="margin-top: 15px;"><strong>The cost of waiting:</strong> Every day your money sits in a 0% checking account, it loses about $27 in purchasing power due to inflation.
+                        </p>
+                    </div>
+                </div>
+
+                <h3>What is Investing? (The Simple Version)</h3>
+                <p>
+                    Investing means putting your money into things that grow over time. We'll focus on two main types:
+                </p>
+                <ul>
+                    <li><strong>Stocks (like your PepsiCo shares):</strong> Buying a tiny piece of a company. As the company grows, your piece becomes more valuable. Stocks grow faster but can be bumpy along the way.</li>
+                    <li><strong>Bonds:</strong> Loaning money to a government or company. They pay you interest (like a savings account) and promise to pay back the loan later. Bonds are slower but much steadier.</li>
+                </ul>
+
+                <h3>The Magic of Diversification</h3>
+                <p>
+                    You've heard "don't put all your eggs in one basket." That's diversification. Instead of buying just one stock (like PepsiCo), we buy thousands of stocks and bonds from all over the world.
+                </p>
+
+                <div class="key-insight">
+                    <h4>Why This Matters: Safety in Numbers</h4>
+                    <p>
+                        If one company has a bad year, it doesn't hurt your overall savings because you own thousands of others. This simple idea is the foundation of safe investing. We do this using something called "Index Funds" - big baskets of investments that are simple and inexpensive.
+                    </p>
+                </div>
+
+                <h3>Deciding What to Do with Current Stocks</h3>
+                <p>You currently own shares in NNN REIT ($26,000) and PepsiCo ($6,800). These provide about $1,490 per year in dividends (extra income). You have two simple choices here:</p>
+
+                <div class="comparison-grid">
+                    <div class="comparison-card yours">
+                        <h4>Option 1: Keep Them (The Comfort Choice)</h4>
+                        <p>If you like seeing these familiar names and enjoy the dividends, you can keep them. They are solid companies.</p>
+                        <p><strong>Why this is okay:</strong> It's a small part of your total money, and feeling comfortable is important.</p>
+                    </div>
+                    <div class="comparison-card others" style="background-color: #e0f7fa; border-color: var(--secondary);">
+                        <h4>Option 2: Sell Them (The Simple Choice)</h4>
+                        <p>You could sell these shares and add the money ($32,800) to your diversified investment plan.</p>
+                        <p><strong>Why this is often better:</strong> It simplifies your finances and reduces risk by not having too much money in just two companies.</p>
+                    </div>
+                </div>
+                <p style="text-align: center; font-style: italic; margin-top: 20px;">Either choice is fine. It's about what feels right to you.</p>
+
+
+                <h3>The Three-Bucket Strategy</h3>
+                <p>We'll divide your money into three buckets to keep things organized and safe. (Note: The amounts below assume you choose Option 2 above and sell the current stocks for simplicity).</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Bucket</th>
+                            <th>Purpose</th>
+                            <th>Amount</th>
+                            <th>Where It Goes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>1. Emergency Fund</strong></td>
+                            <td>Immediate needs & peace of mind</td>
+                            <td>$25,000</td>
+                            <td>High-yield savings account (safe, accessible)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>2. Core Portfolio</strong></td>
+                            <td>Long-term growth for retirement</td>
+                            <td>~$228,000 - $248,000</td>
+                            <td>Diversified mix of stocks and bonds (60/40)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>3. Optional Family Support</strong></td>
+                            <td>Helping Ryan if you choose</td>
+                            <td>$0 - $20,000</td>
+                            <td>(Separate consideration - see Bonus section)</td>
+                        </tr>
+                        <tr style="font-weight: bold; background-color: var(--sand);">
+                            <td colspan="2">Total</td>
+                            <td>$273,000</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="pace-reminder">
+                    Feeling okay? This is a lot of information. Take a deep breath. We're just understanding the landscape right now.
+                </div>
+            </div>
+        </div>
+
+                <div id="strategy" class="section">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Why This Strategy Works (The Evidence)</h2>
+                </div>
+                <p>
+                    You might hear different advice from friends, family, or the news about how to invest. It's important to understand why the simple, diversified approach we're using is the most proven way to build wealth securely.
+                </p>
+
+                <h3>📚 Nobel Prize Winners Support This Approach</h3>
+                <p>This strategy isn't just one person's opinion - it's based on research that won Nobel Prizes:</p>
+                <ul>
+                    <li><strong>Harry Markowitz (Nobel 1990):</strong> Proved diversification (spreading money across many investments) is the only "free lunch" in investing - it reduces risk without reducing returns.</li>
+                    <li><strong>William Sharpe (Nobel 1990):</strong> Showed that low-cost index funds beat 90% of professional investors over time.</li>
+                    <li><strong>Eugene Fama (Nobel 2013):</strong> Demonstrated that stock picking and market timing don't work consistently - even for professionals.</li>
+                    <li><strong>Robert Shiller (Nobel 2013):</strong> Proved that when stocks are expensive (like now, with CAPE at 37.97), future returns are usually lower, so being careful is wise.</li>
+                </ul>
+
+                <h3>Why Other Approaches Might Not Work for You</h3>
+                <p>Let's look at some common suggestions and why they might be risky for your situation:</p>
+
+                <div class="info-box">
+                    <div class="info-header">❌ Individual Stock Picking</div>
+                    <div class="info-content">
+                        <p><strong>What some people suggest:</strong> "Buy Apple, Amazon, or hot tech stocks!"</p>
+                        <p><strong>Why it doesn't work for you:</strong> Research from Standard & Poor's shows that 92% of professional stock pickers fail to beat simple index funds over 15 years. If professionals can't do it, individual investors face even worse odds.</p>
+                        <p><strong>Remember:</strong> You have just 8 years until retirement. One bad stock pick could devastate your timeline.</p>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <div class="info-header">❌ Market Timing</div>
+                    <div class="info-content">
+                        <p><strong>What some people suggest:</strong> "Wait for the market to drop, then invest!"</p>
+                        <p><strong>Why it doesn't work:</strong> A study by Dalbar Inc. found that investors who try to time the market earn 3.5% less per year than those who stay invested. Missing just the 10 best days over 20 years cuts your returns in half.</p>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <div class="info-header">❌ All Stocks / Aggressive Growth</div>
+                    <div class="info-content">
+                        <p><strong>What some people suggest:</strong> "You need 100% stocks to grow your money!"</p>
+                        <p><strong>Why it's dangerous at 57:</strong> The 2008 crisis saw stocks drop 37%. If you had $273,000 in all stocks, you'd lose $101,000 in months. At age 57, you don't have 20 years to recover like younger investors do.</p>
+                        <p>Our 60/40 mix would have only dropped $57,000 in 2008 - painful but recoverable before retirement.</p>
+                    </div>
+                </div>
+
+                <h3>📊 The Evidence Is Overwhelming: What Actually Works</h3>
+                <p>A 50-year study by Vanguard (one of the world's largest investment companies) found that what matters most is:</p>
+                <ul>
+                    <li><strong>Asset Allocation (the 60/40 mix):</strong> Determines 88% of your returns.</li>
+                    <li><strong>Low Costs (index funds):</strong> Adds 1-2% extra return annually.</li>
+                    <li><strong>Staying Invested (not timing):</strong> Adds 1.5% annual return.</li>
+                </ul>
+                <p><strong>Combined benefit:</strong> This approach gives you 3-5% more per year than active trading. On $273,000 over 8 years, that's an extra $100,000+ in your pocket.</p>
+
+                <h3>What the World's Best Investors Say</h3>
+                <blockquote>
+                    "Put 10% in short-term government bonds and 90% in a very low-cost S&P 500 index fund."
+                    <br>— Warren Buffett (instructions for his wife's inheritance)
+                </blockquote>
+                <blockquote>
+                    "Don't look for the needle in the haystack. Just buy the haystack!"
+                    <br>— John Bogle (Vanguard founder, meaning buy index funds, not individual stocks)
+                </blockquote>
+
+                <div class="key-insight">
+                    <h4>A Real-Life Example: Why DJ's Recommendations Don't Fit Your Situation</h4>
+                    <p>
+                        Now that we've looked at the evidence from Nobel Prize winners and the world's best investors, let's apply what we've learned to a specific example: the advice you've received from DJ.
+                    </p>
+                    <p>
+                        DJ cares about you and wants to help. And his approach might work perfectly for him. But your situation is very different from his, which means you need a different strategy.
+                    </p>
+
+                    <table class="data-table" style="margin-top: 20px;">
+                        <thead>
+                            <tr>
+                                <th>Factor</th>
+                                <th>DJ's Situation (Example)</th>
+                                <th>Your Situation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Time Horizon</strong></td>
+                                <td>Younger or already secure retirement income</td>
+                                <td>Exactly 8 critical years until retirement</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Risk Capacity</strong></td>
+                                <td>Can afford to lose money and wait for recovery</td>
+                                <td>Cannot afford major losses this close to retirement</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Financial Cushion</strong></td>
+                                <td>Pension, spouse's income, or other assets</td>
+                                <td>Your income, no pension, separate finances from Todd</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Experience</strong></td>
+                                <td>Comfortable with market volatility and trading</td>
+                                <td>New to investing, needs simplicity and stability</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p style="margin-top: 20px;">
+                        <strong>The Bottom Line:</strong> DJ's advice might be perfect for someone with his risk tolerance, time horizon, and financial cushion. But the evidence we've reviewed - from Nobel laureates to Warren Buffett - proves that your situation requires the balanced, diversified approach we're recommending.
+                    </p>
+                </div>
+
+                <p>
+                    This isn't about whose advice is "right" or "wrong" - it's about what's mathematically proven to work for someone in your exact position.
+                </p>
+
+                <div class="pace-reminder">
+                    💡 You don't have to convince anyone else about your investment choices. This is YOUR money, YOUR retirement, and YOUR decision.
+                </div>
+            </div>
+        </div>
+
+        <div id="steps" class="section">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Simple Steps to Get Started (No Rush)</h2>
+                </div>
+                <p>
+                    We can take these steps one at a time, at whatever pace feels comfortable. There are no deadlines.
+                </p>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker">1</div>
+                        <div class="timeline-content">
+                            <h4>Open One New Account</h4>
+                            <p>We'll open a single investment account at a trusted company like Vanguard, Fidelity, or Schwab. This keeps everything in one place.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker">2</div>
+                        <div class="timeline-content">
+                            <h4>Set Up Your Emergency Fund</h4>
+                            <p>Move $25,000 from your checking account into a high-yield savings account or money market fund within your new investment account. This money is safe, accessible, and will start earning interest immediately (around 4%).</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker">3</div>
+                        <div class="timeline-content">
+                            <h4>Maximize Your 401(k) and Roth IRA</h4>
+                            <p>Increase your work 401(k) contributions to the maximum allowed for your age ($31,000/year). Also, set up automatic monthly contributions to a Roth IRA ($8,000/year).</p>
+                            <div class="info-box" style="margin-top: 15px;">
+                                <div class="info-header">💰 Why This Matters</div>
+                                <div class="info-content">
+                                    This saves you about $7,500 in taxes every year - money that stays in your pocket instead of going to the IRS.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker">4</div>
+                        <div class="timeline-content">
+                            <h4>Invest Gradually (The "Drip" Method)</h4>
+                            <p>Assuming you sell the stocks and don't make the optional family investment yet, you have $248,000 to invest. Instead of doing it all at once (which can be scary), we'll use Dollar-Cost Averaging (DCA).</p>
+                            <p><strong>Example:</strong> Invest ~$41,300 per month for 6 months until fully invested in the 60/40 mix.</p>
+                            <div class="info-box" style="margin-top: 15px;">
+                                <div class="info-header">🧘‍♀️ Why This Matters</div>
+                                <div class="info-content">
+                                    This reduces the anxiety of investing everything at once and ensures you don't accidentally invest right before a temporary market dip.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>The 60/40 Balanced Portfolio</h3>
+                <p>This is the "recipe" for your core investments. It's designed to provide growth while protecting you from big drops. (Amounts based on $248,000 invested).</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Type (Index Fund)</th>
+                            <th>What It Is</th>
+                            <th>Percentage</th>
+                            <th>Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>U.S. Stocks (VTI)</strong></td>
+                            <td>Thousands of American companies</td>
+                            <td>42%</td>
+                            <td>$104,160</td>
+                        </tr>
+                        <tr>
+                            <td><strong>International Stocks (VXUS)</strong></td>
+                            <td>Companies from around the world</td>
+                            <td>18%</td>
+                            <td>$44,640</td>
+                        </tr>
+                        <tr>
+                            <td><strong>U.S. Treasuries (VGIT)</strong></td>
+                            <td>Safe bonds from the U.S. government</td>
+                            <td>30%</td>
+                            <td>$74,400</td>
+                        </tr>
+                        <tr>
+                            <td><strong>TIPS (VTIP)</strong></td>
+                            <td>Bonds that protect against inflation</td>
+                            <td>10%</td>
+                            <td>$24,800</td>
+                        </tr>
+                        <tr style="font-weight: bold; background-color: var(--sand);">
+                            <td colspan="2">Total</td>
+                            <td>100%</td>
+                            <td>$248,000</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="info-box">
+                    <div class="info-header">🐿️ Wisconsin Tax Savings</div>
+                    <div class="info-content">
+                        <p>
+                            We're using U.S. Treasury bonds because the interest they pay is exempt from Wisconsin state tax (5.3%). This simple choice saves you money every year.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="pace-reminder">
+                    These steps might take a few weeks or even months to complete, and that's perfectly fine. The important thing is to start gently.
+                </div>
+            </div>
+        </div>
+
+        <div id="future" class="section">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Your Future Income (Peace of Mind)</h2>
+                </div>
+                <p>
+                    Let's look ahead to see how this plan provides security for your retirement. We're using conservative estimates to be safe.
+                </p>
+
+                <h3>Social Security: Your Guaranteed Foundation</h3>
+                <p>
+                    Based on your $80,000 income, Social Security will provide a significant portion of your retirement income.
+                </p>
+
+                <div class="info-box">
+                    <div class="info-header">💵 When Should You Start?</div>
+                    <div class="info-content">
+                        <p>
+                            If you wait until age 70 to start taking Social Security, your benefit increases by 24% compared to starting at 67.
+                        </p>
+                        <p style="margin-top: 15px;"><strong>Estimated Benefit at 70:</strong> $2,800 - $3,200 per month ($33,600 - $38,400 per year), adjusted for inflation for life.
+                        </p>
+                    </div>
+                </div>
+
+                <h3>Your Portfolio Growth (Conservative Projection)</h3>
+                <p>
+                    If you follow the plan (investing $248,000 now and maximizing your 401(k)/Roth IRA of $39,000/yr), here's what your portfolio could look like by age 65 (assuming a conservative 4.5% annual growth):
+                </p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Year</th>
+                            <th>Age</th>
+                            <th>Starting Value</th>
+                            <th>Contributions</th>
+                            <th>Growth (4.5%)</th>
+                            <th>Ending Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>2025</td><td>57</td><td>$248,000</td><td>$39,000</td><td>$12,893</td><td>$299,893</td></tr>
+                        <tr><td>2026</td><td>58</td><td>$299,893</td><td>$39,000</td><td>$15,241</td><td>$354,134</td></tr>
+                        <tr><td>2027</td><td>59</td><td>$354,134</td><td>$39,000</td><td>$17,672</td><td>$410,806</td></tr>
+                        <tr><td>2028</td><td>60</td><td>$410,806</td><td>$39,000</td><td>$20,241</td><td>$470,047</td></tr>
+                        <tr><td>2029</td><td>61</td><td>$470,047</td><td>$39,000</td><td>$22,907</td><td>$531,954</td></tr>
+                        <tr><td>2030</td><td>62</td><td>$531,954</td><td>$39,000</td><td>$25,693</td><td>$596,647</td></tr>
+                        <tr><td>2031</td><td>63</td><td>$596,647</td><td>$39,000</td><td>$28,604</td><td>$664,251</td></tr>
+                        <tr>
+                            <td>2032</td>
+                            <td>64</td>
+                            <td>$664,251</td>
+                            <td>$39,000</td>
+                            <td>$31,666</td>
+                            <td style="background: var(--primary); color: white; font-weight: bold;">$734,917</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="key-insight">
+                    <h4>Projected Portfolio at Age 65: ~$735,000</h4>
+                    <p>
+                        This shows the power of consistent saving and steady growth, even with conservative estimates.
+                    </p>
+                </div>
+
+                <h3>The "Bridge Years" (Ages 65-70)</h3>
+                <p>
+                    How do you pay for expenses between retirement (65) and when Social Security starts (70)? We use a strategy called a "Bond Ladder."
+                </p>
+
+                <div class="info-box">
+                    <div class="info-header">🌉 The 5-Year Bridge Strategy</div>
+                    <div class="info-content">
+                        <p>
+                            Before you retire, we'll set aside 5 years of expenses (about $150,000) in super-safe bonds that "mature" (pay back) exactly when you need the money.
+                        </p>
+                        <p style="margin-top: 15px;"><strong>Why this matters:</strong> You'll have 5 years of paychecks already saved and guaranteed, so you don't have to worry about stock market ups and downs during these years.
+                        </p>
+                    </div>
+                </div>
+
+                <h3>Retirement Income at Age 70+</h3>
+                <p>Once Social Security starts, your total retirement income will be very secure:</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Source</th>
+                            <th>Annual Amount</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Social Security</td>
+                            <td>$33,600 - $38,400</td>
+                            <td>Guaranteed, inflation-protected</td>
+                        </tr>
+                        <tr>
+                            <td>Portfolio Withdrawals</td>
+                            <td>~$18,000 - $22,000</td>
+                            <td>Safe withdrawal rate (approx 3%)</td>
+                        </tr>
+                        <tr style="font-weight: bold; background-color: var(--sand);">
+                            <td>Total Annual Income</td>
+                            <td>$51,600 - $60,400</td>
+                            <td>Highly sustainable</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="pace-reminder">
+                    The numbers show that you have a clear path to a comfortable retirement. You've got this.
+                </div>
+            </div>
+        </div>
+
+        <div id="protection" class="section">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Protection and Peace of Mind</h2>
+                </div>
+                <p>
+                    Investing can feel scary because the market goes up and down. This section is about understanding what's normal and how to stay calm.
+                </p>
+
+                <h3>Understanding Normal Market Movement</h3>
+                <p>
+                    The stock market is like the ocean - there are always waves. This is normal and expected. Your balanced 60/40 portfolio is designed to handle these waves.
+                </p>
+
+                <div class="info-box">
+                    <div class="info-header">🌊 What's Normal Volatility?</div>
+                    <div class="info-content">
+                        <p>
+                            It's completely normal for your portfolio to swing up or down by:
+                        </p>
+                        <ul>
+                            <li><strong>Daily:</strong> ±$1,500</li>
+                            <li><strong>Monthly:</strong> ±$8,000</li>
+                            <li><strong>Annually:</strong> Anywhere from -15% to +25% in a single year.</li>
+                        </ul>
+                        <p style="margin-top: 15px;">Seeing these swings doesn't mean anything is wrong. It's just how investing works.</p>
+                    </div>
+                </div>
+
+                <h3>Your Secret Weapon: Your Salary</h3>
+                <p>
+                    Unlike people who are already retired, you still have a salary coming in. This is a huge advantage.
+                </p>
+
+                <div class="key-insight">
+                    <h4>Why Your Salary Protects You</h4>
+                    <p>
+                        If the market drops, retirees might have to sell investments when they are down to pay bills. But you don't have to sell anything because your salary covers your expenses. You can simply wait for the market to recover.
+                    </p>
+                    <p style="margin-top: 15px;">Every market drop before you retire is actually an opportunity to buy more investments at lower prices.</p>
+                </div>
+
+                <h3>Simple Rules for When You Feel Anxious</h3>
+                <p>When the news gets scary or the market drops, follow these simple rules:</p>
+
+                <div class="comparison-grid">
+                    <div class="comparison-card yours">
+                        <h4>✅ Always Do</h4>
+                        <ul>
+                            <li>Keep contributing to your 401(k) every month.</li>
+                            <li>Remember that drops are normal and temporary.</li>
+                            <li>Review your plan once a year (not every day).</li>
+                            <li>Ask questions if you're unsure.</li>
+                        </ul>
+                    </div>
+                    <div class="comparison-card others">
+                        <h4>🚫 Never Do</h4>
+                        <ul>
+                            <li>Panic sell when the market drops.</li>
+                            <li>Move everything to cash.</li>
+                            <li>Stop your 401(k) contributions.</li>
+                            <li>Chase "hot tips" from the news or friends.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="pace-reminder">
+                    Peace of mind comes from having a plan and sticking to it, even when things feel bumpy.
+                </div>
+            </div>
+        </div>
+
+        <div id="family" class="section">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Bonus: Considering an Investment in My Business</h2>
+                </div>
+
+                <div class="key-insight">
+                    <h4>🛑 Only After Your Security Is Complete</h4>
+                    <p>
+                        Mom, after securing your own retirement (which is the absolute priority), I wanted to present an option for you to consider - potentially investing in my business venture.
+                    </p>
+                    <p style="margin-top: 15px;">
+                        <strong>This is entirely optional.</strong> Please only consider this if you feel completely comfortable with your own financial security first. Your retirement comes first, no matter what.
+                    </p>
+                </div>
+
+                <h3>My Current Situation (Full Transparency)</h3>
+                <p>
+                    Mom, I want to be completely honest about where I am right now. Since being terminated on June 12th, I've been focusing 100% of my energy on three things:
+                </p>
+                <ol>
+                    <li>Developing the legal case against Science Care (which has consumed significant resources).</li>
+                    <li>Building my businesses literally 24/7.</li>
+                    <li>Continuing to do research projects and technical work for family and friends who need help (work that often costs me money in tools and time, but that I do because people count on my expertise).</li>
+                </ol>
+                <p>
+                    The irony is that while I'm constantly working and creating value for others, after three months without W2 income, my cash reserves are becoming depleted.
+                </p>
+
+                <div class="info-box">
+                    <div class="info-header">💡 An Intelligent and Savvy Way</div>
+                    <div class="info-content">
+                        <p>
+                            Instead of simply asking for financial help, I thought there might be a more intelligent and savvy way to structure this - one that could potentially benefit both of us.
+                        </p>
+                        <p style="margin-top: 15px;">
+                            Rather than a loan or a gift (which can create dependency or awkwardness), structuring this as an early-stage investment means you get real upside potential if the business succeeds, and our relationship stays clear and comfortable (no awkwardness of a "bailout" hanging over family dinners).
+                        </p>
+                        <p style="margin-top: 15px;"><strong>The bottom line:</strong> The same skills I use to help everyone with their technical challenges are exactly what will make this business successful.</p>
+                    </div>
+                </div>
+
+                <h3>What I'm Building: A Dual-Track Approach</h3>
+                <p>
+                    I'm attacking the problem of automated resume rejection (which affects 70-75% of applications) from two different angles:
+                </p>
+
+                <div class="comparison-grid">
+                    <div class="comparison-card yours" style="border-color: var(--primary);">
+                        <h4>1. Southwest Resume Services (B2C)</h4>
+                        <p><strong>Target:</strong> Individual job seekers.</p>
+                        <p><strong>The Idea:</strong> "TurboTax for resumes" - software that optimizes resumes to get past automated filters.</p>
+                        <p><strong>Market:</strong> Huge demand, especially with recent tech layoffs.</p>
+                    </div>
+                    <div class="comparison-card yours" style="border-color: var(--secondary);">
+                        <h4>2. SparkData Analytics (B2B)</h4>
+                        <p><strong>Target:</strong> HR departments and recruiting firms.</p>
+                        <p><strong>The Idea:</strong> Selling data insights and analytics on hiring trends at higher price points.</p>
+                        <p><strong>Market:</strong> Industry contacts have expressed particular interest in this angle.</p>
+                    </div>
+                </div>
+                <p style="text-align: center; font-style: italic; margin-top: 20px;">Having two revenue streams (B2C and B2B) increases the chances of success and leverages the same core technology.</p>
+
+                <h3>Why There's Reason for Optimism</h3>
+                <ul>
+                    <li><strong>Proven Need:</strong> 97.8% of large companies use the filters I'm helping people bypass.</li>
+                    <li><strong>Growing Market:</strong> The market is growing 8.5% annually toward $1.5 billion.</li>
+                    <li><strong>Low Overhead:</strong> As a software business, costs are low and margins can be high.</li>
+                    <li><strong>My Expertise:</strong> My technical skills give me an edge in developing this solution.</li>
+                </ul>
+
+                <h3>The Market Reality (Just So You Know)</h3>
+                <p>
+                    While there is absolutely no pressure for you to decide quickly, I want to be transparent about the market forces at play. In the startup world, timing matters.
+                </p>
+                <div class="info-box">
+                    <div class="info-header">🏃‍♀️ The Competitive Landscape</div>
+                    <div class="info-content">
+                        <p>
+                            Every day I wait to go all-in, someone else is working 24/7 to capture the same opportunity. The difference between entering the market in 3 months versus 9 months could determine whether I'm an early leader or just another latecomer.
+                        </p>
+                        <p style="margin-top: 15px;">
+                            I'm sharing this not to pressure you, but so you understand why I'm considering making this leap now.
+                        </p>
+                    </div>
+                </div>
+                <p>
+                    I wanted you to know the full picture - both that there's no pressure on you to decide quickly, and also why I might need to make my own decision about going full-time soon, with or without investment.
+                </p>
+
+                <h3>How to Think About It: A Gift That Might Give Back</h3>
+                <p>
+                    The honest truth about early-stage businesses is that they are risky. While I believe deeply in this opportunity, it's important to be realistic.
+                </p>
+
+                <div class="key-insight">
+                    <h4>The Best Way to Frame This</h4>
+                    <p>
+                        Think of this primarily as supporting my journey and career transition during a difficult time. If the business succeeds, you'll get a financial return (which could be significant). If it doesn't, you've still enabled me to pursue something meaningful.
+                    </p>
+                    <p style="margin-top: 15px;">It's a gift with the potential for returns, not an investment you should rely on.</p>
+                </div>
+
+                <h3>Potential Scenarios (What Success Looks Like)</h3>
+                <p>While 60-70% of startups don't achieve significant returns, success depends on execution, timing, and persistence.</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Scenario</th>
+                            <th>What It Means</th>
+                            <th>Potential Return (on $20K)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Base Success</strong></td>
+                            <td>1,000 customers paying $50/month or a few enterprise clients</td>
+                            <td>$50,000 - $75,000</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Strong Growth</strong></td>
+                            <td>Significant market share, potential acquisition</td>
+                            <td>$200,000 - $500,000</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Limited Success</strong></td>
+                            <td>Small sustainable business</td>
+                            <td>Principal returned over time</td>
+                        </tr>
+                        <tr>
+                            <td><strong>No Return</strong></td>
+                            <td>Business doesn't gain traction</td>
+                            <td>$0 (but enabled the attempt)</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>The Proposal: Structured and Clear</h3>
+                <p>If you choose to support this, we'll use a professional structure to keep things clear:</p>
+                <ul>
+                    <li><strong>Amount:</strong> $20,000-$30,000 maximum (7.3% of your portfolio at $20K).</li>
+                    <li><strong>Structure:</strong> A SAFE note (standard agreement for early investment).</li>
+                    <li><strong>Terms:</strong> Converts to ownership if the business grows, with protections for you.</li>
+                    <li><strong>Reporting:</strong> I'll send quarterly updates on progress and metrics.</li>
+                </ul>
+
+                <h3>Impact on Your Retirement (It's Safe)</h3>
+                <p>Let's look at how a $20,000 investment affects your retirement security (worst-case scenario where the investment returns $0):</p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Metric</th>
+                            <th>Without Investment</th>
+                            <th>With $20K Investment</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Portfolio at Age 65</td>
+                            <td>~$735,000</td>
+                            <td>~$712,000</td>
+                        </tr>
+                        <tr>
+                            <td>Retirement Income (Age 70+)</td>
+                            <td>$51,600 - $60,400/yr</td>
+                            <td>$51,000 - $59,700/yr</td>
+                        </tr>
+                        <tr>
+                            <td>Success Probability</td>
+                            <td>High</td>
+                            <td>High</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="info-box">
+                    <div class="info-header">🛡️ Why This Amount Is Safe</div>
+                    <div class="info-content">
+                        <p>
+                             The impact on your retirement income is minimal (less than $1,000/year difference). $20,000 represents less than one year of the expected growth of your portfolio. Your retirement security remains intact.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="key-insight">
+                    <h4>🚫 No Guilt, No Pressure</h4>
+                    <p>
+                        Mom, I am pursuing this path regardless of your decision. If you choose not to invest, that's completely fine and won't affect our relationship in any way.
+                    </p>
+                    <p style="margin-top: 15px;">
+                        Your financial security and our relationship are infinitely more important than any business venture.
+                    </p>
+                </div>
+
+                <div class="pace-reminder">
+                    💛 While market timing matters for the business, what matters most is that you feel completely comfortable with any decision you make. Your peace of mind is more important than any business timeline. Take all the time you need.
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+    <!-- Company Footer -->
+    <div class="company-footer">
+        <div class="company-footer-content">
+            <div class="footer-info">
+                <strong>Prepared by SparkData Analytics © 2025</strong> | Lead Analyst: Ryan Zimmerman
+            </div>
+            <div class="footer-disclaimer">
+                This document provides evidence-based financial information for your personal review. It is educational material designed to help you understand investment options. 
+                All investment decisions should be made based on your complete financial picture and comfort level. Past performance does not guarantee future results.
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Remove active class from all tabs
+            const tabs = document.querySelectorAll('.nav-tab');
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+
+            // Add active class to clicked tab (using event delegation for robustness)
+            const activeTab = document.querySelector('.nav-tab[onclick="showSection(\'' + sectionId + '\')"]');
+            if (activeTab) {
+                activeTab.classList.add('active');
+            }
+            
+            // Scroll to the top of the section smoothly
+            // We target the container's top to ensure the tabs are visible
+            document.querySelector('.container').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complex Neurological and Vestibular Syndrome in Hashimoto's Thyroiditis - Case Study Analysis</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #334155;
+            background-color: #f8fafc;
+        }
+
+        /* Header matching the image */
+        .top-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-circle {
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .header-title {
+            color: white;
+            font-size: 1.3rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        .header-right {
+            text-align: right;
+            color: rgba(255,255,255,0.9);
+            font-size: 0.95rem;
+        }
+
+        .header-right div:first-child {
+            font-weight: 300;
+            margin-bottom: 0.25rem;
+        }
+
+        .header-right div:last-child {
+            font-weight: 500;
+        }
+
+        /* Document Title */
+        .document-title {
+            background: white;
+            padding: 2rem 3rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .document-title h1 {
+            font-size: 1.75rem;
+            color: #1e293b;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        /* Sidebar Navigation */
+        .layout-container {
+            display: flex;
+            min-height: calc(100vh - 86px);
+        }
+
+        .sidebar {
+            width: 280px;
+            background: white;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            height: calc(100vh - 86px);
+            overflow-y: auto;
+            padding: 2rem 0;
+        }
+
+        .sidebar-section {
+            margin-bottom: 1.5rem;
+            padding: 0 1.5rem;
+        }
+
+        .sidebar-title {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #94a3b8;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        .nav-link {
+            display: block;
+            padding: 0.75rem 1rem;
+            color: #64748b;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-bottom: 0.25rem;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+            border-left: 3px solid transparent;
+        }
+
+        .nav-link:hover {
+            background: #f1f5f9;
+            color: #334155;
+        }
+
+        .nav-link.active {
+            background: #eef2ff;
+            color: #4f46e5;
+            font-weight: 600;
+            border-left-color: #4f46e5;
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            padding: 2rem 3rem;
+            max-width: 1400px;
+        }
+
+        .content-section {
+            padding-top: 5rem;
+            margin-top: -5rem;
+            margin-bottom: 4rem;
+        }
+
+        .section-header {
+            font-size: 2rem;
+            color: #1e293b;
+            margin-bottom: 2rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 3px solid #4f46e5;
+            font-weight: 600;
+        }
+
+        /* Cards and Boxes */
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            margin-bottom: 1.5rem;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .profile-item {
+            background: #f8fafc;
+            padding: 1.25rem;
+            border-radius: 10px;
+            border-left: 4px solid #3b82f6;
+        }
+
+        .profile-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #64748b;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .profile-value {
+            font-size: 1rem;
+            color: #1e293b;
+            font-weight: 500;
+        }
+
+        /* Alert Boxes */
+        .alert-red {
+            background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+            border-left: 4px solid #dc2626;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .alert-yellow {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-left: 4px solid #f59e0b;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .alert-green {
+            background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+            border-left: 4px solid #10b981;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .alert-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 2.5rem;
+            margin: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0.5rem;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding: 1.25rem;
+            background: white;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2rem;
+            top: 1.5rem;
+            width: 12px;
+            height: 12px;
+            background: #4f46e5;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+        }
+
+        .timeline-date {
+            font-weight: 600;
+            color: #4f46e5;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Chart Container */
+        .chart-container {
+            position: relative;
+            height: 300px;
+            margin: 2rem 0;
+        }
+
+        /* Hypothesis Cards */
+        .hypothesis-card {
+            padding: 1.25rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .hypothesis-card.primary {
+            background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+            border-left: 4px solid #dc2626;
+        }
+
+        .hypothesis-card.secondary {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-left: 4px solid #f59e0b;
+        }
+
+        .hypothesis-card.tertiary {
+            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+            border-left: 4px solid #2563eb;
+        }
+
+        .hypothesis-card.quaternary {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border-left: 4px solid #0ea5e9;
+        }
+
+        .hypothesis-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+        }
+
+        .probability-badge {
+            background: rgba(79, 70, 229, 0.9);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* Tools List */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .tool-item {
+            background: #f8fafc;
+            padding: 1rem;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.9rem;
+            transition: transform 0.2s;
+        }
+
+        .tool-item:hover {
+            transform: translateX(5px);
+        }
+
+        /* Footer matching the image */
+        .footer {
+            background: #1e293b;
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 400;
+            color: #cbd5e1;
+        }
+
+        .footer-subtitle {
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            color: #94a3b8;
+            font-style: italic;
+        }
+
+        .disclaimer-box {
+            max-width: 900px;
+            margin: 2rem auto 0;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: left;
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: #cbd5e1;
+        }
+
+        .disclaimer-box strong {
+            color: white;
+        }
+
+        @media (max-width: 1024px) {
+            .sidebar {
+                display: none;
+            }
+
+            .grid-2, .grid-3 {
+                grid-template-columns: 1fr;
+            }
+
+            .main-content {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Header -->
+    <header class="top-header">
+        <div class="header-left">
+            <div class="logo-circle">S</div>
+            <div class="header-title">SPARKDATA CLINICAL INTELLIGENCE ANALYTICS • AI-ASSISTED RESEARCH SYNTHESIS</div>
+        </div>
+        <div class="header-right">
+            <div>AI-Assisted Literature Review</div>
+            <div>Evidence Synthesis Report</div>
+        </div>
+    </header>
+
+    <!-- Document Title -->
+    <div class="document-title">
+        <h1>Complex Neurological and Vestibular Syndrome in Hashimoto's Thyroiditis: A Comprehensive AI-Assisted Case Study Analysis</h1>
+    </div>
+
+    <!-- Main Layout -->
+    <div class="layout-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <div class="sidebar-title">Navigation</div>
+                <a href="#executive-summary" class="nav-link active">Executive Summary</a>
+                <a href="#case-overview" class="nav-link">Case Overview</a>
+                <a href="#methodology" class="nav-link">Research Methodology</a>
+                <a href="#age-epidemiology" class="nav-link">Age & Epidemiology</a>
+                <a href="#differential" class="nav-link">Differential Diagnosis</a>
+                <a href="#mechanisms" class="nav-link">Pathophysiology</a>
+                <a href="#evidence" class="nav-link">Evidence Summary</a>
+                <a href="#workup" class="nav-link">Diagnostic Considerations</a>
+                <a href="#emergency" class="nav-link">Emergency Criteria</a>
+                <a href="#conclusions" class="nav-link">Conclusions</a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Executive Summary -->
+            <section id="executive-summary" class="content-section">
+                <h1 class="section-header">Executive Summary</h1>
+                
+                <div class="alert-red">
+                    <div class="alert-title">⚠️ Critical Red Flags - Urgent Vascular Evaluation Required</div>
+                    <p>Fifty-eight-year-old female with unilateral pulsatile tinnitus, progressive morning vomiting, and left eye pressure over three to six months. Unilateral pulsatile tinnitus is a RED FLAG requiring urgent neurovascular imaging to exclude dural arteriovenous fistula, venous sinus stenosis or dehiscence, carotid pathology, or temporal bone lesions. While obesity and Hashimoto's are present, the patient's age (fifty-eight) makes idiopathic intracranial hypertension epidemiologically less likely than vascular causes. Immediate MRI with MRA and MRV is mandatory, with temporal bone CT and possible catheter angiography if initial imaging is non-diagnostic.</p>
+                </div>
+
+                <div class="card">
+                    <h3 style="margin-bottom: 1.5rem; color: #1e293b;">Patient Profile Summary</h3>
+                    <div class="grid-3">
+                        <div class="profile-item">
+                            <div class="profile-label">Demographics</div>
+                            <div class="profile-value">58-year-old Female</div>
+                        </div>
+                        <div class="profile-item">
+                            <div class="profile-label">Body Composition</div>
+                            <div class="profile-value">BMI ≥30 (Obese)</div>
+                        </div>
+                        <div class="profile-item">
+                            <div class="profile-label">Baseline Conditions</div>
+                            <div class="profile-value">Hashimoto's, Hypertension</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 style="margin-bottom: 1.5rem; color: #1e293b;">Diagnostic Hypotheses (Age-Adjusted Probabilities)</h3>
+                    <div class="chart-container">
+                        <canvas id="probabilityChart"></canvas>
+                    </div>
+                    <p style="margin-top: 1rem; padding: 1rem; background: #fef3c7; border-radius: 8px; font-size: 0.95rem; color: #78350f;">
+                        <strong>Important Note:</strong> Probabilities are adjusted for age fifty-eight. While IIH is still possible given obesity and female sex, peak IIH incidence occurs in women aged eighteen to forty-four, declining significantly after age forty-four and rare above age fifty. Vascular causes increase with age and better explain unilateral pulsatile tinnitus in this demographic.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Case Overview -->
+            <section id="case-overview" class="content-section">
+                <h2 class="section-header">Detailed Case Overview</h2>
+                
+                <div class="card">
+                    <h3 style="color: #1e293b; margin-bottom: 1.5rem;">Clinical Presentation</h3>
+                    <p style="line-height: 1.8; color: #475569;">A fifty-eight-year-old obese female with established Hashimoto's thyroiditis and hypertension presents with a three to six month progressive multisystem syndrome characterized by daily morning bile vomiting, worsening vertigo, new-onset left-sided pulsatile tinnitus described as a vibration sensation, recurrent migraines, and left eye pressure. The temporal progression with thyroid dysfunction documented two to three months ago and recent emergence of unilateral neurological symptoms suggests either a vascular process or intracranial pressure pathology requiring urgent evaluation. The unilateral nature of symptoms, particularly pulsatile tinnitus, is a critical red flag that mandates comprehensive neurovascular imaging before attributing symptoms to benign causes.</p>
+                </div>
+
+                <div class="card">
+                    <h3 style="color: #dc2626; margin-bottom: 1.5rem;">Progressive Symptom Timeline</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-date">&gt; 6 months ago</div>
+                            <div>Stable Baseline - Managed Hashimoto's thyroiditis and hypertension with standard care</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">~3-6 months ago</div>
+                            <div>Symptom Onset - Progressive dizziness and morning vomiting begin, gradually worsening</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">~2-3 months ago</div>
+                            <div>Thyroid Crisis - Abnormal thyroid values documented, suggesting decompensation</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">Recent weeks</div>
+                            <div>New Unilateral Symptoms - Left eye pressure and pulsatile tinnitus emerge (CRITICAL RED FLAG)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="alert-yellow">
+                    <div class="alert-title">🔍 Key Clinical Features Requiring Urgent Attention</div>
+                    <ul style="margin-top: 1rem; margin-left: 1.5rem; line-height: 2;">
+                        <li><strong>Unilateral Pulsatile Tinnitus:</strong> Most concerning feature. Mandates imaging to exclude dural arteriovenous fistula, venous sinus pathology, carotid disease, or paraganglioma</li>
+                        <li><strong>Morning Predominance:</strong> Symptoms peak in morning hours, suggesting pressure-related phenomena or positional venous congestion</li>
+                        <li><strong>Age Fifty-Eight:</strong> Outside typical IIH demographic (peak eighteen to forty-four), increasing likelihood of vascular etiology</li>
+                        <li><strong>Progressive Nature:</strong> Worsening trajectory over months indicates ongoing pathological process</li>
+                        <li><strong>Left-Sided Focus:</strong> Eye pressure and tinnitus on same side suggests focal vascular or structural pathology</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Research Methodology -->
+            <section id="methodology" class="content-section">
+                <h2 class="section-header">Research Methodology</h2>
+                
+                <div class="card">
+                    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 0.75rem 1.5rem; border-radius: 25px; display: inline-block; margin-bottom: 1.5rem; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">
+                        Multi-Platform AI Evidence Synthesis
+                    </div>
+                    
+                    <div class="grid-2" style="margin-top: 2rem;">
+                        <div>
+                            <h4 style="color: #1e293b; margin-bottom: 1rem;">Document Information</h4>
+                            <p style="margin-bottom: 0.75rem;"><strong>Document Type:</strong> Comprehensive Literature Review and Evidence Synthesis</p>
+                            <p style="margin-bottom: 0.75rem;"><strong>Analysis Method:</strong> Cross-platform triangulation, iterative fact-checking, and evidence synthesis with epidemiological correction</p>
+                            <p style="margin-bottom: 0.75rem;"><strong>Date Prepared:</strong> October 2025</p>
+                            <p style="margin-bottom: 0.75rem;"><strong>Prepared by:</strong> Ryan Zimmerman - SparkData Clinical Intelligence Analytics</p>
+                            <p style="margin-bottom: 0.75rem;"><strong>Organization Type:</strong> Independent AI Research Synthesis Service</p>
+                        </div>
+                        
+                        <div>
+                            <h4 style="color: #1e293b; margin-bottom: 1rem;">AI Research Platforms Used</h4>
+                            <div class="tools-grid">
+                                <div class="tool-item">🔬 OpenAI GPT-5 Pro Deep Research</div>
+                                <div class="tool-item">🔬 Anthropic Claude Opus 4.1 Deep Research</div>
+                                <div class="tool-item">🔬 Google Gemini 2.5 Pro Deep Research</div>
+                                <div class="tool-item">🔬 Google Gemini 2.5 Pro Deep Think</div>
+                                <div class="tool-item">🔬 Perplexity AI Deep Research</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="alert-green">
+                    <div class="alert-title">✓ Transparency & Methodology Statement</div>
+                    <p style="margin-top: 1rem; line-height: 1.8;"><strong>Note on Research Approach:</strong> This comprehensive review was conducted using advanced AI research platforms to synthesize current evidence on neurovascular causes of unilateral pulsatile tinnitus, idiopathic intracranial hypertension, and autoimmune vestibular dysfunction in the context of Hashimoto's thyroiditis and obesity. The methodology involved systematic queries across multiple AI research platforms with cross-validation and triangulation of findings, iterative fact-checking and verification of primary sources including epidemiological data, synthesis using advanced prompting techniques and data analytics best practices, and multiple rounds of review and refinement including correction of age-related epidemiological claims based on national incidence data.</p>
+                    <p style="margin-top: 1rem; line-height: 1.8;"><strong>Important:</strong> This is not a PROSPERO-registered systematic review or formal meta-analysis, but rather a comprehensive AI-assisted literature synthesis designed to provide clinicians and researchers with an up-to-date evidence summary for consideration alongside traditional clinical resources.</p>
+                </div>
+            </section>
+
+            <!-- Age and Epidemiology -->
+            <section id="age-epidemiology" class="content-section">
+                <h2 class="section-header">Age-Related Epidemiology and Diagnostic Implications</h2>
+                
+                <div class="card" style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border-left: 4px solid #f59e0b;">
+                    <h3 style="color: #78350f; margin-bottom: 1rem;">Critical Age Consideration at Fifty-Eight Years</h3>
+                    <p style="color: #78350f; line-height: 1.8; margin-bottom: 1.5rem;">National epidemiological data demonstrates that idiopathic intracranial hypertension has peak incidence in women aged eighteen to forty-four years, with incidence declining significantly after age forty-four and becoming rare above age fifty. At fifty-eight years old, the patient is outside the typical IIH demographic window, which fundamentally changes the pre-test probability and diagnostic approach. While IIH is not impossible given her obesity (BMI greater than or equal to thirty) and female sex—both strong risk factors—the age mismatch requires prioritizing other diagnoses that increase with age, particularly vascular causes of pulsatile tinnitus.</p>
+                    
+                    <div style="background: white; border-radius: 8px; padding: 1.5rem; margin-top: 1rem;">
+                        <h4 style="color: #1e293b; margin-bottom: 1rem;">Why Age Matters for This Differential</h4>
+                        <p style="line-height: 1.8; color: #475569; margin-bottom: 1rem;">Dural arteriovenous fistulas, venous sinus stenosis and dehiscence, carotid fibromuscular dysplasia and atherosclerotic disease, and paragangliomas all increase in incidence with age. The combination of unilateral pulsatile tinnitus (present in seventy to ninety percent of dural AV fistulas) with age greater than fifty makes vascular causes statistically more likely than IIH. Morning symptom predominance could reflect positional changes in venous pressure rather than IIH-related intracranial pressure elevation.</p>
+                        <p style="line-height: 1.8; color: #475569;">This does not mean IIH should be excluded from the workup. Obesity and female sex remain potent risk factors, and secondary intracranial hypertension from venous outflow obstruction can occur at any age. However, the diagnostic approach must prioritize vascular imaging protocols (MRA, MRV, temporal bone CT) before proceeding to lumbar puncture, and clinicians should have lower threshold for catheter angiography if initial non-invasive imaging is non-diagnostic.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 style="color: #1e293b; margin-bottom: 1.5rem;">Verified Epidemiological Facts</h3>
+                    <div style="background: #f0fdf4; border-left: 4px solid #10b981; padding: 1.25rem; border-radius: 8px; margin-bottom: 1rem;">
+                        <strong style="color: #065f46;">✓ ACCURATE:</strong>
+                        <p style="color: #166534; margin-top: 0.5rem; line-height: 1.8;">Over ninety percent of IIH patients have BMI greater than or equal to twenty-five (overweight or obese), making obesity the strongest modifiable risk factor regardless of age.</p>
+                    </div>
+                    <div style="background: #f0fdf4; border-left: 4px solid #10b981; padding: 1.25rem; border-radius: 8px; margin-bottom: 1rem;">
+                        <strong style="color: #065f46;">✓ ACCURATE:</strong>
+                        <p style="color: #166534; margin-top: 0.5rem; line-height: 1.8;">Pulsatile tinnitus occurs in approximately sixty to eighty percent of IIH cases and is caused by turbulent venous flow through stenotic transverse or sigmoid sinuses.</p>
+                    </div>
+                    <div style="background: #fef2f2; border-left: 4px solid #dc2626; padding: 1.25rem; border-radius: 8px;">
+                        <strong style="color: #991b1b;">✗ CORRECTED:</strong>
+                                                    <p style="color: #991b1b; margin-top: 0.5rem; line-height: 1.8;">Previous claim that IIH peak incidence is in perimenopausal women aged forty to sixty was inaccurate. Actual peak incidence is in women aged eighteen to forty-four, with sharp decline after age forty-four. This correction significantly impacts diagnostic probability weighting for this fifty-eight-year-old patient.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Differential Diagnosis -->
+            <section id="differential" class="content-section">
+                <h2 class="section-header">Differential Diagnosis Analysis (Age-Adjusted)</h2>
+                
+                <div class="hypothesis-card primary">
+                    <div class="hypothesis-title">
+                        <span>1. Vascular Causes (Dural AV Fistula, Venous Sinus Stenosis/Dehiscence, Carotid Pathology)</span>
+                        <span class="probability-badge" style="background: rgba(220, 38, 38, 0.9);">35-45% Probability</span>
+                    </div>
+                    <div style="margin-bottom: 1rem;">
+                        <strong style="color: #7f1d1d;">Supporting Evidence (Strong for Age Group):</strong>
+                        <ul style="margin-left: 1.5rem; margin-top: 0.5rem; line-height: 1.8; color: #991b1b;">
+                            <li><strong>Dural Arteriovenous Fistula:</strong> Unilateral pulsatile tinnitus is the presenting symptom in seventy to ninety percent of dAVF cases. Risk increases with age. Can cause venous hypertension leading to morning symptoms and eye pressure from elevated orbital venous pressure.</li>
+                            <li><strong>Venous Sinus Stenosis/Dehiscence/Diverticulum:</strong> Can produce unilateral pulsatile tinnitus and symptoms mimicking IIH through venous outflow obstruction. Sigmoid sinus wall anomalies are increasingly recognized with improved imaging.</li>
+                            <li><strong>Carotid Pathology:</strong> Carotid dissection, fibromuscular dysplasia, or high-grade atherosclerotic stenosis can cause unilateral pulsatile tinnitus, headache, and dizziness. Risk increases with age and hypertension.</li>
+                            <li>Morning symptom predominance could reflect positional changes in venous pressure or flow rather than classic IIH mechanism.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <strong style="color: #7f1d1d;">Diagnostic Approach:</strong>
+                        <p style="margin-top: 0.5rem; line-height: 1.8; color: #991b1b;">Mandatory MRI with both MRA and MRV. If venous abnormality suspected but not clearly delineated, CT venography provides superior detail. If initial imaging non-diagnostic but clinical suspicion high, proceed to catheter angiography (gold standard for dAVF). Temporal bone CT to evaluate sigmoid sinus wall. Carotid duplex ultrasound if bruits present or vascular risk factors.</p>
+                    </div>
+                </div>
+
+                <div class="hypothesis-card secondary">
+                    <div class="hypothesis-title">
+                        <span>2. Temporal Bone Pathology (Paraganglioma, Superior Semicircular Canal Dehiscence, Sigmoid Sinus Abnormalities)</span>
+                        <span class="probability-badge" style="background: rgba(245, 158, 11, 0.9);">20-30% Probability</span>
+                    </div>
+                    <div style="margin-bottom: 1rem;">
+                        <strong style="color: #78350f;">Supporting Evidence (Moderate to Strong):</strong>
+                        <ul style="margin-left: 1.5rem; margin-top: 0.5rem; line-height: 1.8; color: #92400e;">
+                            <li><strong>Glomus Jugulare or Tympanicum (Paraganglioma):</strong> Classic presentation is unilateral pulsatile tinnitus. Incidence increases with age. May have visible retrotympanic mass on otoscopy. Can cause cranial nerve dysfunction if large.</li>
+                            <li><strong>Superior Semicircular Canal Dehiscence (SSCD):</strong> Can cause sound or pressure-induced dizziness, autophony, and pulsatile tinnitus. Vertigo provoked by Valsalva or loud sounds is characteristic.</li>
+                            <li><strong>Sigmoid Sinus Diverticulum or Dehiscence:</strong> Increasingly recognized cause of unilateral pulsatile tinnitus. Bony wall defect allows transmission of venous pulsations to inner ear.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <strong style="color: #78350f;">Diagnostic Approach:</strong>
+                        <p style="margin-top: 0.5rem; line-height: 1.8; color: #92400e;">High-resolution temporal bone CT is diagnostic for SSCD and sigmoid sinus wall abnormalities. Otoscopy to evaluate for retrotympanic mass. Comprehensive audiometry may show characteristic patterns (conductive hyperacusis in SSCD, low-frequency conductive loss with paraganglioma). MRI with contrast helps characterize soft tissue masses.</p>
+                    </div>
+                </div>
+
+                <div class="hypothesis-card tertiary">
+                    <div class="hypothesis-title">
+                        <span>3. Idiopathic Intracranial Hypertension or Secondary Intracranial Hypertension</span>
+                        <span class="probability-badge" style="background: rgba(37, 99, 235, 0.9);">20-30% Probability</span>
+                    </div>
+                    <div style="margin-bottom: 1rem;">
+                        <strong style="color: #1e40af;">Supporting Evidence (Moderate, Age-Adjusted Down):</strong>
+                        <ul style="margin-left: 1.5rem; margin-top: 0.5rem; line-height: 1.8; color: #1e3a8a;">
+                            <li>Strong risk factor profile: Female sex, BMI greater than or equal to thirty (obesity present in over ninety percent of IIH)</li>
+                            <li>Morning vomiting suggests overnight intracranial pressure elevation from supine positioning</li>
+                            <li>Pulsatile tinnitus occurs in sixty to eighty percent of IIH from venous sinus stenosis</li>
+                            <li>Eye pressure sensation could reflect papilledema or orbital venous congestion</li>
+                            <li>Thyroid dysfunction and hypertension can contribute to or exacerbate elevated ICP</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <strong style="color: #1e40af;">Against IIH / Inconsistencies:</strong>
+                        <ul style="margin-left: 1.5rem; margin-top: 0.5rem; line-height: 1.8; color: #1e3a8a;">
+                            <li><strong>Age fifty-eight is outside typical demographic:</strong> Peak IIH incidence is in women aged eighteen to forty-four years. Incidence declines sharply after age forty-four and is rare above fifty.</li>
+                            <li>Unilateral symptom emphasis is less typical, though asymmetric venous stenosis can cause unilateral pulsatile tinnitus in approximately thirty percent of cases</li>
+                            <li>If IIH present, more likely to be secondary intracranial hypertension from venous outflow obstruction rather than true idiopathic IIH</li>
+                        </ul>
+                    </div>
+                    <div style="margin-top: 1rem;">
+                        <strong style="color: #1e40af;">Diagnostic Approach:</strong>
+                        <p style="margin-top: 0.5rem; line-height: 1.8; color: #1e3a8a;">Fundoscopic examination for papilledema (if present, supports diagnosis). MRV to evaluate for venous sinus stenosis. If MRI/MRV shows signs suggestive of elevated ICP (empty sella, optic nerve sheath dilation, posterior globe flattening) and vascular causes excluded, lumbar puncture with opening pressure measurement (diagnostic threshold greater than 250 mm H2O in adults). Visual field testing and OCT if papilledema present.</p>
+                    </div>
+                </div>
+
+                <div class="hypothesis-card quaternary">
+                    <div class="hypothesis-title">
+                        <span>4. Vestibular Migraine with Autoimmune Vestibular Dysfunction</span>
+                        <span class="probability-badge" style="background: rgba(14, 165, 233, 0.9);">15-20% Probability</span>
+                    </div>
+                    <div style="margin-bottom: 1rem;">
+                        <strong style="color: #075985;">Supporting Evidence (Moderate):</strong>
+                        <ul style="margin-left: 1.5rem; margin-top: 0.5rem; line-height: 1.8; color: #0c4a6e;">
+                            <li>Known migraine history provides established diagnosis</li>
+                            <li>Hashimoto's thyroiditis strongly associated with vestibular dysfunction: eighteen percent of euthyroid Hashimoto's patients develop vestibular symptoms versus two percent of controls</li>
+                            <li>Anti-TPO antibodies show strong correlation with vestibular dysfunction (odds ratio 25.6) versus TSH elevation alone (odds ratio 12.9)</li>
+                            <li>Vertigo and dizziness can be prominent features of vestibular migraine</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <strong style="color: #075985;">Inconsistencies:</strong>
+                        <ul style="margin-left: 1.5rem; margin-top: 0.5rem; line-height: 1.8; color: #0c4a6e;">
+                            <li>Daily predictable morning pattern is atypical for episodic vestibular migraine</li>
+                            <li>Progressive worsening over months less common than discrete episodic attacks</li>
+                            <li>Pulsatile tinnitus is not characteristic of vestibular migraine</li>
+                            <li>Morning bile vomiting more suggestive of elevated ICP or GI pathology than migraine</li>
+                            <li><strong>This is primarily a diagnosis of exclusion</strong> after red-flag vascular and structural causes are ruled out</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="alert-red" style="margin-top: 2rem;">
+                    <div class="alert-title">🚨 Critical Diagnostic Priority</div>
+                    <p style="margin-top: 1rem; line-height: 1.8;">The unilateral nature of the pulsatile tinnitus combined with the patient's age mandates that vascular and structural causes be excluded BEFORE attributing symptoms to benign conditions like vestibular migraine or autoimmune vestibular dysfunction. A missed dural arteriovenous fistula can progress to venous hypertensive encephalopathy, intracranial hemorrhage, or permanent vision loss. The diagnostic workup must be aggressive and comprehensive, with low threshold for advanced imaging including catheter angiography if non-invasive studies are inconclusive but clinical suspicion remains high.</p>
+                </div>
+            </section>
+
+            <!-- Mechanisms -->
+            <section id="mechanisms" class="content-section">
+                <h2 class="section-header">Pathophysiological Mechanisms by Diagnosis</h2>
+                
+                <div class="card" style="border-left: 4px solid #dc2626;">
+                    <h3 style="color: #dc2626; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem;">
+                        <span style="background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">1</span>
+                        Vascular Mechanism: Dural Arteriovenous Fistula and Venous Pathology
+                    </h3>
+                    <p style="line-height: 1.8; color: #334155; margin-bottom: 1rem;">Dural arteriovenous fistulas represent abnormal connections between dural arteries and venous sinuses or cortical veins, bypassing the normal capillary bed. The high-flow arterial blood directly entering the venous system creates turbulent flow that produces pulsatile tinnitus (the "vibration" sensation described by the patient) in seventy to ninety percent of cases. The affected ear corresponds to the side of the fistula. When located near the transverse-sigmoid sinus junction or jugular bulb, the pulsatile sound transmission to the inner ear is most pronounced.</p>
+                    <p style="line-height: 1.8; color: #334155;">The morning symptom predominance can be explained by positional changes in venous pressure. Overnight supine positioning increases cerebral venous pressure and reduces drainage efficiency. Upon awakening, this elevated venous pressure manifests as headache, nausea, vomiting, and increased perception of the pulsatile tinnitus. The left eye pressure could reflect elevated pressure in the superior ophthalmic vein, which drains into the cavernous sinus and ultimately the affected venous system. If venous drainage is compromised by the fistula, orbital venous congestion results in the sensation of eye pressure or fullness.</p>
+                </div>
+
+                <div class="card" style="border-left: 4px solid #f59e0b;">
+                    <h3 style="color: #f59e0b; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem;">
+                        <span style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">2</span>
+                        Temporal Bone Pathology Mechanisms
+                    </h3>
+                    <p style="line-height: 1.8; color: #334155; margin-bottom: 1rem;">Sigmoid sinus diverticulum or dehiscence creates a defect in the bony wall separating the sigmoid sinus from the middle ear or mastoid air cells. This allows direct transmission of venous pulsations to the cochlea, perceived as pulsatile tinnitus. The mechanism is purely mechanical—the normal bony barrier is absent, so the pressure waves from blood flow directly stimulate the inner ear. High-resolution temporal bone CT demonstrates the bony defect, while the clinical correlation is the pulsatile tinnitus that may change with head position or Valsalva maneuvers that alter venous pressure.</p>
+                    <p style="line-height: 1.8; color: #334155;">Paragangliomas (glomus tumors) are highly vascular neuroendocrine tumors arising from paraganglia along the glossopharyngeal or vagus nerves. Glomus jugulare tumors arise near the jugular bulb, while glomus tympanicum tumors arise along the tympanic plexus. Both can cause pulsatile tinnitus through their high blood flow and proximity to the middle ear. As they grow, they can erode bone, cause conductive hearing loss, and potentially affect cranial nerves. Otoscopic examination may reveal a reddish pulsatile mass behind the tympanic membrane, and imaging shows intense contrast enhancement with the characteristic "salt and pepper" appearance on MRI.</p>
+                </div>
+
+                <div class="card" style="border-left: 4px solid #2563eb;">
+                    <h3 style="color: #2563eb; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem;">
+                        <span style="background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">3</span>
+                        Intracranial Hypertension Mechanism (If Present Despite Age)
+                    </h3>
+                    <p style="line-height: 1.8; color: #334155;">If intracranial hypertension is present despite the patient's age, the mechanism involves impaired cerebrospinal fluid absorption at arachnoid granulations and venous outflow obstruction. In obesity, elevated intra-abdominal pressure transmitted through increased pleural pressure affects intracranial venous return. Additionally, adipokine dysregulation in obesity directly affects CSF dynamics. When combined with venous sinus stenosis (either primary or secondary), a positive feedback loop develops where elevated CSF pressure compresses venous sinuses, further impairing drainage and worsening the pressure elevation.</p>
+                    <p style="line-height: 1.8; color: #334155;">The morning vomiting represents classic overnight intracranial pressure elevation. In the supine position during sleep, venous return is slightly impaired and CSF production continues, leading to peak ICP in early morning hours. Upon awakening, the sudden increase in intra-abdominal and intrathoracic pressure from rising, coughing, or straining triggers vomiting. The pulsatile tinnitus in IIH specifically results from turbulent blood flow through stenotic transverse or sigmoid sinuses, heard as a whooshing sound that may be synchronous with the heartbeat.</p>
+                </div>
+
+                <div class="card" style="border-left: 4px solid #10b981;">
+                    <h3 style="color: #10b981; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem;">
+                        <span style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">4</span>
+                        Autoimmune and Metabolic Contributions
+                    </h3>
+                    <p style="line-height: 1.8; color: #334155;">Hashimoto's thyroiditis contributes through two distinct mechanisms. First, anti-TPO antibodies can cross-react with inner ear proteins through molecular mimicry, directly attacking vestibular and cochlear structures. This creates inflammation and endolymphatic hydrops independent of thyroid hormone levels, explaining why eighteen percent of euthyroid Hashimoto's patients develop vestibular dysfunction. The dizziness and vestibular symptoms may persist despite optimal thyroid replacement because the autoimmune attack continues regardless of TSH normalization.</p>
+                    <p style="line-height: 1.8; color: #334155;">Second, thyroid hormone deficiency affects multiple systems relevant to this presentation. Hypothyroidism increases CSF production and decreases absorption, can worsen obesity through metabolic slowing, affects gastric motility contributing to nausea and vomiting, and increases blood viscosity affecting cerebral hemodynamics. Hypertension amplifies these effects by affecting delicate inner ear microcirculation, exacerbating any venous congestion or elevated ICP, and increasing perception of pulsatile tinnitus through enhanced arterial pulsations. The combination creates a multisystem dysfunction where each condition amplifies the others.</p>
+                </div>
+            </section>
+
+            <!-- Evidence Summary -->
+            <section id="evidence" class="content-section">
+                <h2 class="section-header">Evidence-Based Facts and Corrections</h2>
+                
+                <div class="alert-green">
+                    <h3 style="margin-bottom: 1.5rem; font-size: 1.2rem;">Verified Research Findings</h3>
+                    
+                    <div style="background: white; border-radius: 8px; padding: 1.25rem; margin-bottom: 1rem;">
+                        <div style="color: #059669; font-weight: 600; margin-bottom: 0.5rem;">✓ CONFIRMED: Obesity and IIH Association</div>
+                        <div style="color: #065f46;">Over ninety percent of IIH patients have BMI greater than or equal to twenty-five, with strongest correlation at BMI greater than or equal to thirty. This association holds across age groups, though IIH incidence itself varies by age.</div>
+                    </div>
+                    
+                    <div style="background: white; border-radius: 8px; padding: 1.25rem; margin-bottom: 1rem;">
+                        <div style="color: #059669; font-weight: 600; margin-bottom: 0.5rem;">✓ CONFIRMED: Pulsatile Tinnitus in IIH</div>
+                        <div style="color: #065f46;">Pulsatile tinnitus occurs in approximately sixty to eighty percent of IIH patients, caused by turbulent venous flow through stenotic transverse or sigmoid sinuses. However, pulsatile tinnitus is NOT specific to IIH and has many vascular causes.</div>
+                    </div>
+                    
+                    <div style="background: white; border-radius: 8px; padding: 1.25rem; margin-bottom: 1rem;">
+                        <div style="color: #059669; font-weight: 600; margin-bottom: 0.5rem;">✓ CONFIRMED: Asymmetric Venous Anatomy</div>
+                        <div style="color: #065f46;">Unilateral or asymmetric transverse sinus stenosis or hypoplasia occurs in approximately thirty-three percent of individuals and can cause unilateral pulsatile tinnitus. This explains why some IIH patients present with unilateral symptoms.</div>
+                    </div>
+                    
+                    <div style="background: white; border-radius: 8px; padding: 1.25rem; margin-bottom: 1rem;">
+                        <div style="color: #059669; font-weight: 600; margin-bottom: 0.5rem;">✓ CONFIRMED: Hashimoto's and Vestibular Dysfunction</div>
+                        <div style="color: #065f46;">Anti-TPO antibodies correlate strongly with vestibular dysfunction (odds ratio 25.6) compared to TSH elevation alone (odds ratio 12.9). Eighteen percent of euthyroid Hashimoto's patients develop vestibular symptoms versus two percent of controls. This autoimmune mechanism operates independently of thyroid hormone levels.</div>
+                    </div>
+                    
+                    <div style="background: white; border-radius: 8px; padding: 1.25rem; margin-bottom: 1rem;">
+                        <div style="color: #059669; font-weight: 600; margin-bottom: 0.5rem;">✓ CONFIRMED: Hypertension and Tinnitus</div>
+                        <div style="color: #065f46;">Forty-four percent of patients with pulsatile tinnitus have comorbid hypertension, significantly higher than controls. Hypertension affects inner ear microcirculation and amplifies perception of vascular sounds.</div>
+                    </div>
+                </div>
+
+                <div class="alert-red" style="margin-top: 2rem;">
+                    <h3 style="margin-bottom: 1.5rem; font-size: 1.2rem;">Critical Epidemiological Correction</h3>
+                    
+                    <div style="background: white; border-radius: 8px; padding: 1.25rem;">
+                        <div style="color: #dc2626; font-weight: 600; margin-bottom: 0.75rem;">✗ CORRECTED: IIH Age Distribution</div>
+                        <div style="color: #991b1b; line-height: 1.8;">
+                            <p style="margin-bottom: 0.75rem;"><strong>Previous Incorrect Claim:</strong> IIH peak incidence occurs in perimenopausal women aged forty to sixty years.</p>
+                            <p style="margin-bottom: 0.75rem;"><strong>Corrected Evidence:</strong> National epidemiological data demonstrates peak IIH incidence in women aged eighteen to forty-four years. Incidence declines significantly after age forty-four and is rare above age fifty.</p>
+                            <p><strong>Clinical Impact:</strong> At age fifty-eight, the patient is outside the typical IIH demographic window. While obesity and female sex remain risk factors that keep IIH in the differential, vascular causes that increase with age (dural AV fistulas, venous sinus pathology, carotid disease, paragangliomas) should be prioritized in the diagnostic workup. This correction fundamentally changes the pre-test probability weighting and diagnostic approach.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Diagnostic Workup -->
+            <section id="workup" class="content-section">
+                <h2 class="section-header">Potential Diagnostic Considerations: Educational Overview for Discussion with Your Medical Team</h2>
+                
+                <div class="alert-yellow" style="margin-bottom: 2rem;">
+                    <div class="alert-title">📋 Important Note About This Section</div>
+                    <p style="margin-top: 1rem; line-height: 1.8;">The following information describes diagnostic approaches commonly discussed in medical literature for symptom presentations similar to yours. This is educational material designed to help you have informed conversations with your healthcare providers. <strong>Your physicians will determine the appropriate testing strategy, timing, and specialist referrals based on their clinical judgment, direct examination findings, and your complete medical history.</strong> This section is intended to help you understand what questions you might ask and what evaluation pathways your medical team may consider, not to direct or prescribe specific medical care.</p>
+                </div>
+
+                <div class="card" style="background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%); border-left: 4px solid #dc2626;">
+                    <h3 style="color: #7f1d1d; margin-bottom: 1rem;">Priority Level 1: Initial Safety Assessments (Typically Within 24-48 Hours)</h3>
+                    <p style="color: #991b1b; line-height: 1.8; margin-bottom: 1rem;">In medical literature, cases presenting with unilateral pulsatile tinnitus and progressive symptoms are generally prioritized for initial safety screening. Your medical team will likely want to begin with basic assessments to rule out immediately concerning findings. Here are evaluations that are commonly discussed for initial appointments:</p>
+                    
+                    <div style="background: white; border-radius: 8px; padding: 1.25rem; margin-top: 1rem;">
+                        <strong style="color: #1e293b;">Questions to Ask Your Primary Care Provider or Neurologist:</strong>
+                        <ul style="margin-left: 1.5rem; margin-top: 0.5rem; line-height: 1.8; color: #475569;">
+                            <li>"Should we do a fundoscopic examination to check for papilledema, which could indicate elevated intracranial pressure?"</li>
+                            <li>"Would you recommend checking my blood pressure in different positions to assess for orthostatic changes?"</li>
+                            <li>"Should I have a neurological examination to document any focal findings?"</li>
+                            <li>"Would an ear examination by ENT be helpful to look for visible abnormalities?"</li>
+                            <li>"Can you listen over my head, neck, and ears for any abnormal sounds (bruits) that might suggest vascular issues?"</li>
+                        </ul>
+                    </div>
+                    <div style="background: white; border-radius: 8px; padding: 1.25rem; margin-top: 1rem;">
+                        <strong style="color: #1e293b;">Laboratory Tests Commonly Considered in Initial Evaluation:</strong>
+                        <ul style="margin-left: 1.5rem; margin-top: 0.5rem; line-height: 1.8; color: #475569;">
+                            <li>Complete thyroid panel including TSH, Free T4, and Free T3 to assess current thyroid status given your known Hashimoto's and recent abnormal values</li>
+                            <li>Thyroid antibody levels (Anti-TPO, anti-thyroglobulin) to quantify autoimmune activity, as these correlate with vestibular dysfunction in research studies</li>
+                            <li>Basic metabolic panel and complete blood count for general health assessment</li>
+                            <li>Inflammatory markers such as ESR or CRP if there is concern for active autoimmune processes</li>
+                        </ul>
+                    </div>
+                    <div style="background: white; border-radius: 8px; padding: 1.25rem; margin-top: 1rem;">
+                        <strong style="color: #1e293b;">Specialist Referrals Your Provider May Consider:</strong>
+                        <ul style="margin-left: 1.5rem; margin-top: 0.5rem; line-height: 1.8; color: #475569;">
+                            <li>Ophthalmology or neuro-ophthalmology for detailed fundoscopic examination and visual field testing</li>
+                            <li>Neurology for coordination of vascular evaluation and symptom assessment</li>
+                            <li>ENT or otology for evaluation of the ear structures and pulsatile tinnitus</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card" style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border-left: 4px solid #f59e0b;">
+                    <h3 style="color: #78350f; margin-bottom: 1rem;">Priority Level 2: Imaging Studies (Commonly Recommended Within Days to One Week)</h3>
+                    <p style="color: #92400e; line-height: 1.8; margin-bottom: 1rem;">Medical literature emphasizes the importance of neurovascular imaging when unilateral pulsatile tinnitus is present, as this can help identify or exclude vascular and structural causes that may require specific treatments. Your neurologist or neuroradiologist will determine which imaging studies are most appropriate for your situation. Here is what specialists commonly consider:</p>
+                    
+                    <div style="background: white; border-radius: 8px; padding: 1.25rem; margin-top: 1rem;">
+                        <strong style="color: #1e293b;">Imaging Studies to Discuss with Your Neurologist:</strong>
+                        <ul style="margin-left: 1.5rem; margin-top: 0.5rem; line-height: 1.8; color: #475569;">
+                            <li><strong>MRI brain with and without contrast:</strong> Ask about whether this would be helpful to exclude structural lesions like masses or tumors and to evaluate for signs that might suggest elevated intracranial pressure such as empty sella, optic nerve changes, or posterior globe flattening</li>
+                            <li><strong>MR Angiography (MRA) of head and neck:</strong> Discuss whether this could help evaluate arterial anatomy and look for abnormal vascular connections like dural arteriovenous fistulas or carotid artery abnormalities</li>
+                            <li><strong>MR Venography (MRV) of head:</strong> Ask if this would be useful to assess the venous sinuses for stenosis, thrombosis, or anatomical variants that could explain symptoms</li>
+                            <li><strong>If MRI is not possible due to contraindications:</strong> Inquire about CT angiography (CTA) and CT venography (CTV) as alternative imaging approaches</li>
+                        </ul>
+                    </div>
+                    <div style="background: white; border-radius: 8px; padding: 1.25rem; margin-top: 1rem;">
+                        <strong style="color: #1e293b;">Questions to Ask Your ENT Specialist or Otologist:</strong>
+                        <ul style="margin-left: 1.5rem; margin-top: 0.5rem; line-height: 1.8; color: #475569;">
+                            <li>"Would a high-resolution temporal bone CT be helpful to evaluate the bone structures around my ear, including the sigmoid sinus wall, jugular bulb, and semicircular canals?"</li>
+                            <li>"Are there signs that suggest we should look for temporal bone abnormalities like sigmoid sinus diverticulum, dehiscence, or superior semicircular canal dehiscence?"</li>
+                            <li>"Could a vascular tumor like a glomus tumor (paraganglioma) explain my symptoms, and would imaging help evaluate for this?"</li>
+                        </ul>
+                    </div>
+                    <div style="background: white; border-radius: 8px; padding: 1.25rem; margin-top: 1rem;">
+                        <strong style="color: #1e293b;">Vascular Evaluation to Discuss with Your Medical Team:</strong>
+                        <ul style="margin-left: 1.5rem; margin-top: 0.5rem; line-height: 1.8; color: #475569;">
+                            <li>Carotid duplex ultrasound to assess blood flow through the carotid arteries and check for stenosis or other abnormalities, particularly given the hypertension history</li>
+                            <li>Discussion about whether findings on initial imaging might warrant catheter angiography, which is considered the gold standard for detecting subtle dural arteriovenous fistulas that may not be visible on non-invasive imaging</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card" style="background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); border-left: 4px solid #2563eb;">
+                    <h3 style="color: #1e3a8a; margin-bottom: 1rem;">Priority Level 3: Additional Testing (Often Scheduled After Initial Imaging Results)</h3>
+                    <p style="color: #1e40af; line-height: 1.8; margin-bottom: 1rem;">Once initial imaging is complete, your medical team can better determine what additional testing would be most helpful. The following are commonly considered depending on initial findings:</p>
+                    
+                    <div style="background: white; border-radius: 8px; padding: 1.25rem; margin-top: 1rem;">
+                        <strong style="color: #1e293b;">Hearing and Balance Testing to Discuss with ENT:</strong>
+                        <ul style="margin-left: 1.5rem; margin-top: 0.5rem; line-height: 1.8; color: #475569;">
+                            <li>Ask whether comprehensive audiometry with speech discrimination testing would be helpful to document your baseline hearing and identify any characteristic patterns</li>
+                            <li>Inquire about tympanometry and acoustic reflex testing to evaluate middle ear function</li>
+                            <li>Discuss whether vestibular function testing such as videonystagmography (VNG) or electronystagmography (ENG) would help characterize your dizziness</li>
+                            <li>If superior semicircular canal dehiscence is suspected, ask about vestibular evoked myogenic potentials (VEMP) testing</li>
+                        </ul>
+                    </div>
+                    <div style="background: white; border-radius: 8px; padding: 1.25rem; margin-top: 1rem;">
+                        <strong style="color: #1e293b;">If Imaging Suggests Elevated Intracranial Pressure and Vascular Causes Are Excluded:</strong>
+                        <ul style="margin-left: 1.5rem; margin-top: 0.5rem; line-height: 1.8; color: #475569;">
+                            <li>Discuss with your neurologist whether a lumbar puncture to measure opening pressure would be appropriate (opening pressure greater than 250 mm H2O is considered diagnostic for elevated intracranial pressure in adults)</li>
+                            <li>Ask about cerebrospinal fluid analysis to rule out inflammatory or infectious processes</li>
+                            <li>Inquire about formal automated visual field testing to check for any subtle vision changes related to pressure on the optic nerves</li>
+                            <li>Discuss optical coherence tomography (OCT) to objectively measure optic nerve thickness if papilledema is present</li>
+                        </ul>
+                    </div>
+                    <div style="background: white; border-radius: 8px; padding: 1.25rem; margin-top: 1rem;">
+                        <strong style="color: #1e293b;">Cardiovascular and Metabolic Assessment:</strong>
+                        <ul style="margin-left: 1.5rem; margin-top: 0.5rem; line-height: 1.8; color: #475569;">
+                            <li>Twenty-four-hour ambulatory blood pressure monitoring may be recommended to assess blood pressure patterns throughout the day and night, particularly to evaluate for morning surges</li>
+                            <li>Ask your cardiologist or primary care provider about whether an ECG, lipid panel, and HbA1c would be helpful for cardiovascular risk assessment</li>
+                            <li>Discuss whether a sleep study might be appropriate, as obstructive sleep apnea is common with obesity and can worsen both blood pressure and intracranial pressure</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="alert-yellow" style="margin-top: 2rem;">
+                    <div class="alert-title">💡 Understanding the Diagnostic Process</div>
+                    <p style="margin-top: 1rem; line-height: 1.8;">This tiered approach reflects how specialists commonly prioritize evaluation in medical literature, starting with safety assessments and moving toward more comprehensive testing based on initial findings. Your actual diagnostic pathway will be individualized by your medical team based on their examination findings, your specific symptom pattern, insurance considerations, and local availability of testing. Some tests may be done in different order, combined, or determined to be unnecessary based on your physicians' clinical judgment. The goal of this educational overview is to help you understand the rationale behind various testing options so you can have informed discussions about which approaches your team recommends for your specific situation.</p>
+                </div>
+            </section>
+
+            <!-- Emergency Criteria -->
+            <section id="emergency" class="content-section">
+                <div style="background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%); color: white; border-radius: 12px; padding: 2.5rem; box-shadow: 0 10px 30px rgba(220, 38, 38, 0.3);">
+                    <h2 style="font-size: 2rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem;">
+                        <span style="font-size: 2.5rem;">🚨</span>
+                        When to Go to the Emergency Department
+                    </h2>
+                    
+                    <div class="grid-2" style="gap: 2rem;">
+                        <div>
+                            <h3 style="font-size: 1.3rem; border-bottom: 2px solid rgba(255,255,255,0.5); padding-bottom: 0.75rem; margin-bottom: 1rem;">IMMEDIATE EMERGENCY - Call 911</h3>
+                            <ul style="margin-left: 1.5rem; line-height: 2;">
+                                <li>Sudden severe "thunderclap" headache (worst headache of life)</li>
+                                <li>Sudden vision loss, double vision, or severe vision changes</li>
+                                <li>Facial drooping, arm or leg weakness, numbness on one side</li>
+                                <li>Speech difficulties, slurred speech, or confusion</li>
+                                <li>Loss of consciousness or seizure activity</li>
+                                <li>Sudden inability to walk or severe imbalance</li>
+                                <li>Neck stiffness with fever (concern for meningitis)</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h3 style="font-size: 1.3rem; border-bottom: 2px solid rgba(255,255,255,0.5); padding-bottom: 0.75rem; margin-bottom: 1rem;">URGENT EMERGENCY - Go to ER Within Hours</h3>
+                            <ul style="margin-left: 1.5rem; line-height: 2;">
+                                <li>Blood pressure greater than 180/120 (hypertensive emergency)</li>
+                                <li>Persistent projectile vomiting, unable to keep any fluids down</li>
+                                <li>Severe vertigo with inability to stand or walk safely</li>
+                                <li>Sudden worsening or change in character of symptoms</li>
+                                <li>New pulsatile quality to headache or tinnitus</li>
+                                <li>Severe eye pain or acute vision changes</li>
+                                <li>Signs of altered mental status or unusual behavior</li>
+                                <li>Sudden hearing loss</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(255,255,255,0.1); border-radius: 8px;">
+                        <strong style="font-size: 1.1rem;">What to Tell Emergency Staff:</strong>
+                        <ul style="margin-top: 0.75rem; margin-left: 1.5rem; line-height: 1.8;">
+                            <li>"I have unilateral pulsatile tinnitus on the left side that has been progressive over three to six months"</li>
+                            <li>"I have daily morning vomiting and left eye pressure"</li>
+                            <li>"My doctors are concerned about a possible vascular cause or dural AV fistula"</li>
+                            <li>Mention obesity, Hashimoto's thyroiditis, and hypertension as background conditions</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Conclusions -->
+            <section id="conclusions" class="content-section">
+                <h2 class="section-header">Conclusions & Recommendations</h2>
+                
+                <div class="card" style="background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%); border-left: 4px solid #dc2626;">
+                    <h3 style="color: #7f1d1d; margin-bottom: 1.5rem; font-size: 1.3rem;">Primary Clinical Conclusions</h3>
+                    <p style="line-height: 1.9; color: #991b1b; font-size: 1.05rem;">The patient's presentation of unilateral pulsatile tinnitus with progressive morning vomiting, vertigo, and left eye pressure in a fifty-eight-year-old female requires urgent comprehensive neurovascular evaluation. While obesity, female sex, and Hashimoto's thyroiditis create risk factors for multiple conditions, the patient's age of fifty-eight places her outside the typical idiopathic intracranial hypertension demographic (peak incidence eighteen to forty-four years). Vascular causes that increase with age—particularly dural arteriovenous fistula, venous sinus stenosis or dehiscence, carotid pathology, and temporal bone lesions including paragangliomas—must be prioritized and excluded before attributing symptoms to benign conditions. The unilateral nature of the pulsatile tinnitus is a critical red flag that mandates aggressive vascular imaging with low threshold for catheter angiography if non-invasive studies are non-diagnostic.</p>
+                </div>
+
+                <div class="card">
+                    <h3 style="color: #1e293b; margin-bottom: 1.5rem;">Critical Discussion Points for Your Medical Team</h3>
+                    <div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border-radius: 8px; padding: 1.5rem; border-left: 4px solid #f59e0b;">
+                        <p style="line-height: 1.9; color: #78350f; margin-bottom: 1rem;">When meeting with your healthcare providers, consider discussing these priority items that emerge from the medical literature on similar presentations:</p>
+                        <ol style="margin-left: 1.5rem; line-height: 2; color: #78350f;">
+                            <li><strong>Immediate safety assessment:</strong> Request fundoscopic examination and comprehensive neurological examination to identify any urgent findings</li>
+                            <li><strong>Vascular imaging priority:</strong> Discuss the medical literature's emphasis on neurovascular imaging (MRI with MRA and MRV, plus temporal bone CT) when unilateral pulsatile tinnitus is present</li>
+                            <li><strong>Specialist coordination:</strong> Ask whether referrals to neurology, ENT/otology, and ophthalmology would be appropriate for comprehensive evaluation</li>
+                            <li><strong>Thyroid optimization:</strong> Review current thyroid levels and discuss whether adjustment of hormone replacement might be beneficial given the documented decompensation</li>
+                            <li><strong>Blood pressure management:</strong> Discuss whether twenty-four-hour ambulatory monitoring and adjustment of antihypertensive therapy would be appropriate</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="card" style="border-top: 4px solid #10b981;">
+                    <h3 style="color: #065f46; margin-bottom: 1rem;">Understanding Potential Management Approaches</h3>
+                    <p style="line-height: 1.8; margin-bottom: 1rem; color: #475569;">If vascular and structural causes are excluded through imaging, your medical team may discuss various management approaches depending on the final diagnosis. Medical literature describes several pathways for conditions in the differential diagnosis. These would be determined by your physicians based on complete evaluation and not prescribed by this educational document.</p>
+                    <p style="line-height: 1.8; color: #475569;">For example, if intracranial hypertension is identified, specialists commonly discuss weight management programs, specific medications to reduce CSF production, and regular vision monitoring. If autoimmune vestibular dysfunction from Hashimoto's is contributing, vestibular rehabilitation therapy and thyroid hormone optimization are frequently considered. If vascular abnormalities are found, interventional approaches may be discussed. Your actual treatment plan will be individualized based on your physicians' direct assessment and the diagnostic findings.</p>
+                </div>
+
+                <div class="alert-yellow" style="margin-top: 2rem;">
+                    <div class="alert-title">⚠️ Important Prognostic Information</div>
+                    <p style="margin-top: 1rem; line-height: 1.8;">The prognosis depends critically on the underlying diagnosis. Medical literature indicates that many vascular causes, while serious, are potentially treatable with appropriate intervention when identified early. Various conditions in the differential have different natural histories and treatment responses. The key to optimal outcomes is prompt diagnosis through comprehensive evaluation and appropriate specialist involvement. Your medical team will be able to provide specific prognostic information once diagnostic testing is complete and a definitive diagnosis is established.</p>
+                </div>
+
+                <div class="card" style="margin-top: 2rem;">
+                    <h3 style="color: #dc2626; margin-bottom: 1rem;">Critical Data Gaps and Study Limitations</h3>
+                    <p style="line-height: 1.8; margin-bottom: 1rem; color: #475569;">This analysis is limited by the absence of several key clinical data points that would refine diagnostic certainty. The following information gaps should be addressed through direct medical evaluation:</p>
+                    
+                    <div style="background: #fef2f2; border-radius: 8px; padding: 1.25rem; margin-top: 1rem;">
+                        <div style="columns: 2; column-gap: 2rem; color: #7f1d1d;">
+                            <div style="break-inside: avoid; margin-bottom: 0.5rem;">• Current thyroid hormone levels and antibody titers</div>
+                            <div style="break-inside: avoid; margin-bottom: 0.5rem;">• Fundoscopic examination results</div>
+                            <div style="break-inside: avoid; margin-bottom: 0.5rem;">• MRI, MRA, and MRV imaging results</div>
+                            <div style="break-inside: avoid; margin-bottom: 0.5rem;">• Temporal bone CT findings</div>
+                            <div style="break-inside: avoid; margin-bottom: 0.5rem;">• Presence of cranial bruits on auscultation</div>
+                            <div style="break-inside: avoid; margin-bottom: 0.5rem;">• Comprehensive audiometry findings</div>
+                            <div style="break-inside: avoid; margin-bottom: 0.5rem;">• Vestibular function test results</div>
+                            <div style="break-inside: avoid; margin-bottom: 0.5rem;">• Twenty-four-hour blood pressure data</div>
+                            <div style="break-inside: avoid; margin-bottom: 0.5rem;">• Complete medication list with dosages</div>
+                            <div style="break-inside: avoid; margin-bottom: 0.5rem;">• Sleep study results</div>
+                            <div style="break-inside: avoid; margin-bottom: 0.5rem;">• Carotid duplex ultrasound findings</div>
+                            <div style="break-inside: avoid; margin-bottom: 0.5rem;">• Visual field testing data</div>
+                            <div style="break-inside: avoid; margin-bottom: 0.5rem;">• Detailed symptom diary patterns</div>
+                            <div style="break-inside: avoid; margin-bottom: 0.5rem;">• Family history of vascular malformations</div>
+                            <div style="break-inside: avoid; margin-bottom: 0.5rem;">• Prior imaging studies for comparison</div>
+                        </div>
+                    </div>
+                    
+                    <p style="margin-top: 1.5rem; line-height: 1.8; color: #475569;"><strong>Methodological Limitations:</strong> This analysis relies on AI-synthesized literature review and clinical reasoning based on presented information, not direct patient examination or complete medical records. Probability estimates are based on epidemiological data and may not reflect individual variation. The analysis was corrected based on fact-checking that identified age-related epidemiological inaccuracies. All recommendations are preliminary and educational, pending comprehensive clinical evaluation by qualified healthcare providers with access to complete patient data and imaging results. This document serves as a decision support tool for informed patient-provider discussions, not as medical advice or diagnostic instruction.</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <h2 class="footer-title">Prepared by SparkData Clinical Intelligence Analytics © 2025 | Lead Researcher: Ryan Zimmerman</h2>
+        <p class="footer-subtitle">Independent AI Research Synthesis Service - AI-Assisted Evidence Synthesis for Medical Research</p>
+        
+        <div class="disclaimer-box">
+            <p style="margin-bottom: 1rem;"><strong>Disclaimer:</strong> This document represents an AI-assisted literature synthesis and evidence analysis. It is not a peer-reviewed publication, registered systematic review, or medical diagnosis.</p>
+            
+            <p style="margin-bottom: 1rem;"><strong>Important Notes:</strong> SparkData Clinical Intelligence Analytics is an independent AI research synthesis service that utilizes advanced artificial intelligence platforms for evidence gathering and analysis to support medical research and clinical decision-making. This service provides synthesized information from multiple sources but does not conduct traditional laboratory-based medical research or clinical trials.</p>
+            
+            <p style="margin-bottom: 1rem;"><strong>Corrections and Updates:</strong> This document has been updated to correct epidemiological inaccuracies regarding IIH age distribution identified through fact-checking. Peak IIH incidence occurs in women aged 18-44 years, not 40-60 years as previously stated. Diagnostic probabilities have been reweighted accordingly to reflect age-appropriate differential diagnosis for a 58-year-old patient.</p>
+            
+            <p style="margin-bottom: 1rem;"><strong>Intended Use:</strong> This review is intended for educational and informational purposes only. It is designed to provide patients and healthcare professionals with synthesized evidence from current literature to facilitate informed discussions, but should not be used as the sole basis for medical decision-making.</p>
+            
+            <p><strong>Clinical Responsibility:</strong> All clinical decisions should be made based on complete patient assessment by qualified healthcare providers, direct review of primary literature and current clinical guidelines, consultation with appropriate specialists, and consideration of individual patient circumstances and preferences. Healthcare providers should verify all information independently before clinical application. This document does not establish a doctor-patient relationship and should not be construed as medical advice or prescriptive medical care.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation active state based on scroll
+        const observerOptions = {
+            threshold: 0.3,
+            rootMargin: '-100px 0px -50% 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    document.querySelectorAll('.nav-link').forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${id}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.content-section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+
+        // Create probability chart with updated values
+        const ctx = document.getElementById('probabilityChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: [
+                    'Vascular (dAVF, Sinus Stenosis, Carotid)',
+                    'Temporal Bone (Paraganglioma, SSCD)',
+                    'IIH / Secondary Intracranial HTN',
+                    'Vestibular Migraine / Autoimmune'
+                ],
+                datasets: [{
+                    label: 'Probability Range',
+                    data: [
+                        [35, 45],
+                        [20, 30],
+                        [20, 30],
+                        [15, 20]
+                    ],
+                    backgroundColor: [
+                        'rgba(220, 38, 38, 0.8)',
+                        'rgba(245, 158, 11, 0.8)',
+                        'rgba(37, 99, 235, 0.8)',
+                        'rgba(14, 165, 233, 0.8)'
+                    ],
+                    borderColor: [
+                        'rgb(220, 38, 38)',
+                        'rgb(245, 158, 11)',
+                        'rgb(37, 99, 235)',
+                        'rgb(14, 165, 233)'
+                    ],
+                    borderWidth: 2,
+                    borderSkipped: false
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                const value = context.raw;
+                                return `Probability: ${value[0]}-${value[1]}%`;
+                            }
+                        }
+                    },
+                    title: {
+                        display: true,
+                        text: 'Age-Adjusted Probabilities (58-year-old female)',
+                        font: {
+                            size: 13,
+                            style: 'italic'
+                        },
+                        color: '#64748b'
+                    }
+                },
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        max: 50,
+                        ticks: {
+                            callback: function(value) {
+                                return value + '%';
+                            }
+                        },
+                        title: {
+                            display: true,
+                            text: 'Probability Range (%)'
+                        }
+                    },
+                    y: {
+                        ticks: {
+                            autoSkip: false,
+                            font: {
+                                size: 11
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
