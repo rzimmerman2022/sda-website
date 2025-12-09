@@ -45,12 +45,12 @@ export default function ContactPage() {
       } else {
         console.error('Form submission error:', result.error);
         setFormState('error');
-        alert(result.error || 'Failed to send message. Please try emailing us directly at info@sparkdatalab.ai');
+        alert(result.error || 'Failed to send message. Please try emailing us directly at contact@sparkdatalab.ai');
       }
     } catch (error) {
       console.error('Form submission failed:', error);
       setFormState('error');
-      alert('Failed to send message. Please try emailing us directly at info@sparkdatalab.ai');
+      alert('Failed to send message. Please try emailing us directly at contact@sparkdatalab.ai');
     }
   };
 
@@ -214,10 +214,10 @@ export default function ContactPage() {
                       Prefer email? Reach out directly at:
                     </p>
                     <a
-                      href="mailto:info@sparkdatalab.ai"
+                      href="mailto:contact@sparkdatalab.ai"
                       className="text-brand-blue hover:text-brand-blue-light font-medium transition-colors"
                     >
-                      info@sparkdatalab.ai
+                      contact@sparkdatalab.ai
                     </a>
                   </div>
 
