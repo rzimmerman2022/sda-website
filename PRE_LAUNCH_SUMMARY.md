@@ -54,31 +54,32 @@
 **Steps to Complete:**
 
 ```bash
-# 1. Create Web3Forms account (2 min)
-Go to: https://web3forms.com/
-Sign up with: ryan.zimmerman@southwestresumes.com
+# 1. Login to Formspree (same as Southwest Resumes!) (1 min)
+Go to: https://formspree.io/login
 Create form: "SparkData Analytics Contact"
-Copy Access Key
+Copy endpoint URL: https://formspree.io/f/YOUR_FORM_ID
 
-# 2. Add to Vercel (2 min)
+# 2. Add to Vercel (1 min)
 Go to: https://vercel.com/rzimmerman2022s-projects/sparkdata-analytics/settings/environment-variables
 Add New Variable:
-  Name: WEB3FORMS_ACCESS_KEY
-  Value: [Your Access Key]
+  Name: FORMSPREE_ENDPOINT
+  Value: https://formspree.io/f/YOUR_FORM_ID
   Environment: Production
 Save
 
-# 3. Redeploy (1 min)
-Automatic: GitHub push triggers deploy (already done)
-Manual: vercel --token PvFJaCVjjqOiShWwKiY0egx9 --name sparkdata-analytics --prod --yes
+# 3. Redeploy (Automatic - already done!)
+GitHub push already triggered auto-deploy
+Or manual: vercel --token PvFJaCVjjqOiShWwKiY0egx9 --name sparkdata-analytics --prod --yes
 
-# 4. Test (2 min)
+# 4. Test (1 min)
 Visit: https://sparkdatalab.ai/contact
 Submit test form
 Check email: ryan.zimmerman@southwestresumes.com
 ```
 
-**Full Instructions:** See [CONTACT_FORM_SETUP.md](CONTACT_FORM_SETUP.md)
+**Full Instructions:** See [FORMSPREE_SETUP.md](FORMSPREE_SETUP.md)
+
+**Why Formspree?** You're already using it for Southwest Resumes - same familiar platform!
 
 ---
 

@@ -85,29 +85,33 @@ ${new Date().toLocaleString()}
     // const resend = new Resend(process.env.RESEND_API_KEY);
     // await resend.emails.send(emailData);
 
-    // For now, send to a form service or log
-    // Using Web3Forms as temporary fallback (no API key needed)
-    const response = await fetch('https://api.web3forms.com/submit', {
+    // Using Formspree.io (same service as Southwest Resumes)
+    const formspreeEndpoint = process.env.FORMSPREE_ENDPOINT || process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT;
+
+    if (!formspreeEndpoint) {
+      throw new Error('Formspree endpoint not configured');
+    }
+
+    const response = await fetch(formspreeEndpoint, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
       },
       body: JSON.stringify({
-        access_key: process.env.WEB3FORMS_ACCESS_KEY || 'YOUR_WEB3FORMS_KEY',
         name: `${firstName} ${lastName}`,
         email: email,
         phone: phone || '',
         subject: subject,
         message: message,
-        from_name: 'SparkData Analytics Website',
-        replyto: email
+        _replyto: email,
+        _subject: `SparkData Contact: ${subject}`
       })
     });
 
     const result = await response.json();
 
-    if (result.success) {
+    if (response.ok) {
       return NextResponse.json({
         success: true,
         message: 'Thank you for your message. We will respond within 24-48 hours.'
