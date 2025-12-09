@@ -77,14 +77,6 @@ ${new Date().toLocaleString()}
       `.trim()
     };
 
-    // Log for debugging (remove in production)
-    console.log('Contact form submission:', emailData);
-
-    // TODO: Uncomment when Resend is set up
-    // const { Resend } = await import('resend');
-    // const resend = new Resend(process.env.RESEND_API_KEY);
-    // await resend.emails.send(emailData);
-
     // Using Formspree.io (same service as Southwest Resumes)
     const formspreeEndpoint = process.env.FORMSPREE_ENDPOINT || process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT;
 
@@ -109,15 +101,14 @@ ${new Date().toLocaleString()}
       })
     });
 
-    const result = await response.json();
-
     if (response.ok) {
       return NextResponse.json({
         success: true,
         message: 'Thank you for your message. We will respond within 24-48 hours.'
       });
     } else {
-      throw new Error('Form submission failed');
+      const errorData = await response.json();
+      throw new Error(errorData.error || 'Form submission failed');
     }
 
   } catch (error) {
