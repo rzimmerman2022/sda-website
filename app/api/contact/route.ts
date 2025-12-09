@@ -22,61 +22,6 @@ export async function POST(request: Request) {
       );
     }
 
-    // For now, we'll use Resend (modern email API for Next.js)
-    // TODO: Set up Resend account and add RESEND_API_KEY to environment variables
-    // For immediate deployment, we'll log to console and send success
-    // This should be replaced with actual Resend integration before production
-
-    const emailData = {
-      from: `${firstName} ${lastName} <${email}>`,
-      to: 'ryan.zimmerman@southwestresumes.com',
-      replyTo: email,
-      subject: `SparkData Contact: ${subject}`,
-      html: `
-        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-          <h2 style="color: #1e3a8a;">New Contact Form Submission</h2>
-
-          <div style="background: #f3f4f6; padding: 20px; border-radius: 8px; margin: 20px 0;">
-            <p style="margin: 8px 0;"><strong>Name:</strong> ${firstName} ${lastName}</p>
-            <p style="margin: 8px 0;"><strong>Email:</strong> ${email}</p>
-            ${phone ? `<p style="margin: 8px 0;"><strong>Phone:</strong> ${phone}</p>` : ''}
-            <p style="margin: 8px 0;"><strong>Subject:</strong> ${subject}</p>
-          </div>
-
-          <div style="margin: 20px 0;">
-            <h3 style="color: #1e3a8a;">Message:</h3>
-            <p style="white-space: pre-wrap;">${message}</p>
-          </div>
-
-          <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 30px 0;" />
-
-          <p style="color: #6b7280; font-size: 12px;">
-            Sent from SparkData Analytics contact form<br />
-            ${new Date().toLocaleString('en-US', {
-              dateStyle: 'full',
-              timeStyle: 'long',
-              timeZone: 'America/New_York'
-            })}
-          </p>
-        </div>
-      `,
-      text: `
-New Contact Form Submission
-
-Name: ${firstName} ${lastName}
-Email: ${email}
-${phone ? `Phone: ${phone}` : ''}
-Subject: ${subject}
-
-Message:
-${message}
-
----
-Sent from SparkData Analytics contact form
-${new Date().toLocaleString()}
-      `.trim()
-    };
-
     // Using Formspree.io (same service as Southwest Resumes)
     const formspreeEndpoint = process.env.FORMSPREE_ENDPOINT || process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT;
 
