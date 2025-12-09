@@ -59,7 +59,7 @@ export async function POST(request: Request) {
   } catch (error) {
     console.error('Contact form error:', error);
     return NextResponse.json(
-      { error: 'Failed to send message. Please try emailing us directly at contact@sparkdatalab.ai' },
+      { error: 'Failed to send message. Please try emailing us directly at info@sparkdatalab.ai' },
       { status: 500 }
     );
   }
