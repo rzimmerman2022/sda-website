@@ -17,11 +17,41 @@ export default function ContactPage() {
     e.preventDefault();
     setFormState('submitting');
 
-    // TODO: Implement actual form submission to email service
-    // For now, simulate success after 1 second
-    setTimeout(() => {
-      setFormState('success');
-    }, 1000);
+    try {
+      const formData = new FormData(e.currentTarget);
+      const data = {
+        firstName: formData.get('firstName'),
+        lastName: formData.get('lastName'),
+        email: formData.get('email'),
+        phone: formData.get('phone'),
+        subject: formData.get('subject'),
+        message: formData.get('message')
+      };
+
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (response.ok && result.success) {
+        setFormState('success');
+        // Reset form
+        e.currentTarget.reset();
+      } else {
+        console.error('Form submission error:', result.error);
+        setFormState('error');
+        alert(result.error || 'Failed to send message. Please try emailing us directly at contact@sparkdatalab.ai');
+      }
+    } catch (error) {
+      console.error('Form submission failed:', error);
+      setFormState('error');
+      alert('Failed to send message. Please try emailing us directly at contact@sparkdatalab.ai');
+    }
   };
 
   return (
