@@ -1,13 +1,12 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import Image from 'next/image';
 import { Container } from '@/components/ui/Container';
 import { Button } from '@/components/ui/Button';
 import { Badge } from '@/components/ui/Badge';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { createPageMetadata } from '@/lib/metadata';
-import { Target, Shield, TrendingUp, Users, ArrowRight, FileText, Database, CheckCircle, FileCheck, AlertTriangle, BookOpen } from 'lucide-react';
+import { Target, Shield, ArrowRight, FileText, Database, CheckCircle, FileCheck, AlertTriangle, BookOpen } from 'lucide-react';
 
 export const metadata: Metadata = createPageMetadata({
   title: 'About SparkData Analytics',
