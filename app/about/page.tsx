@@ -7,12 +7,12 @@ import { Badge } from '@/components/ui/Badge';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { createPageMetadata } from '@/lib/metadata';
-import { Target, Shield, TrendingUp, Users, ArrowRight } from 'lucide-react';
+import { Target, Shield, TrendingUp, Users, ArrowRight, FileText, Database, CheckCircle, FileCheck, AlertTriangle, BookOpen } from 'lucide-react';
 
 export const metadata: Metadata = createPageMetadata({
   title: 'About SparkData Analytics',
   description:
-    'Learn about our mission to deliver world-class analytical insights through cutting-edge AI technology and rigorous quality controls.',
+    'We provide the Trust Layer between you and AI. Combining multi-model synthesis with audit-grade quality controls to turn complex questions into clear, evidence-based insights.',
   path: '/about',
 });
 
@@ -29,96 +29,269 @@ export default function AboutPage() {
                 About Us
               </Badge>
               <h1 className="text-display-md font-bold text-brand-navy mb-6">
-                Turning Complexity Into Clarity
+                Bridging the Gap Between AI Potential and Human Trust
               </h1>
-              <p className="text-xl text-neutral-700 leading-relaxed">
-                SparkData Analytics was founded on a simple belief: in an era of powerful AI
-                tools, the organizations that combine cutting-edge technology with rigorous
-                quality controls will earn trust and deliver real value.
-              </p>
+              <div className="space-y-4 text-lg text-neutral-700 leading-relaxed">
+                <p>
+                  SparkData Analytics is an independent research organization. We exist to apply forensic-grade verification to high-stakes AI analysis.
+                </p>
+                <p className="text-xl font-semibold text-brand-navy">
+                  We provide the &quot;Trust Layer&quot; between you and the AI.
+                </p>
+                <p>
+                  We combine multi-model synthesis with audit-grade quality controls to turn complex data into clear, evidence-based insights you can confidently take to a professional.
+                </p>
+              </div>
             </div>
           </Container>
         </section>
 
-        {/* Mission */}
+        {/* What Makes Us Different */}
+        <section className="py-16 lg:py-24 bg-white">
+          <Container>
+            <div className="mx-auto max-w-3xl mb-12 text-center">
+              <h2 className="text-3xl font-bold text-brand-navy mb-6">What Makes Us Different</h2>
+              <p className="text-xl text-neutral-700 font-semibold mb-4">
+                Raw AI models deal in probability. We deal in evidence.
+              </p>
+              <p className="text-lg text-neutral-700">
+                We don&apos;t just &quot;use&quot; AI models. We run them through a documented, repeatable verification protocol built on three hard constraints:
+              </p>
+            </div>
+
+            <div className="grid gap-8 md:grid-cols-3">
+              <div className="bg-gradient-to-br from-brand-navy to-brand-navy-light rounded-xl p-8 text-white">
+                <h3 className="text-xl font-bold mb-4">True Isolation</h3>
+                <p>
+                  Models can&apos;t see each other&apos;s work. When they agree, it&apos;s because the evidence is strong—not because they&apos;re echoing each other.
+                </p>
+              </div>
+
+              <div className="bg-gradient-to-br from-brand-gold to-yellow-600 rounded-xl p-8 text-brand-navy">
+                <h3 className="text-xl font-bold mb-4">Adversarial Triggers</h3>
+                <p>
+                  High consensus gets challenged, not celebrated. We manufacture the friction that &quot;helpful&quot; AI tries to avoid.
+                </p>
+              </div>
+
+              <div className="bg-gradient-to-br from-brand-blue to-blue-600 rounded-xl p-8 text-white">
+                <h3 className="text-xl font-bold mb-4">Evidence Anchoring</h3>
+                <p>
+                  No claim leaves without a citation. AI generates hypotheses; peer-reviewed literature validates them.
+                </p>
+              </div>
+            </div>
+          </Container>
+        </section>
+
+        {/* What We Do */}
         <section className="py-16 lg:py-24">
           <Container>
-            <div className="mx-auto max-w-3xl">
-              <div className="mb-12 flex items-center gap-4">
-                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-brand-gold/20">
-                  <Target className="h-7 w-7 text-brand-navy" />
-                </div>
-                <h2 className="text-3xl font-bold text-brand-navy">Our Mission</h2>
-              </div>
-              <p className="text-lg text-neutral-700 leading-relaxed mb-6">
-                To deliver world-class analytical insights by combining cutting-edge AI technology
-                with rigorous quality controls that exceed enterprise and regulatory standards.
+            <div className="mx-auto max-w-3xl mb-12 text-center">
+              <h2 className="text-3xl font-bold text-brand-navy mb-4">What We Do</h2>
+              <p className="text-lg text-neutral-700 leading-relaxed mb-4">
+                We help you use AI for the things that actually matter. When you have a question that&apos;s too complex for a quick Google search and too important to leave to a single chatbot answer, we step in.
               </p>
               <p className="text-lg text-neutral-700 leading-relaxed">
-                We don&apos;t just use AI — we verify it, cross-check it, and hold it to the same
-                standards that global regulators are developing for high-stakes AI applications.
+                Our workflow bridges the gap between &quot;chatbot conversation&quot; and &quot;clinical precision&quot;:
+              </p>
+            </div>
+
+            <div className="grid gap-8 md:grid-cols-2">
+              <div className="bg-white rounded-xl border-2 border-neutral-200 p-8">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-brand-navy/10">
+                    <FileText className="h-6 w-6 text-brand-navy" />
+                  </div>
+                  <h3 className="text-xl font-bold text-brand-navy">Intake & Framing</h3>
+                </div>
+                <p className="text-neutral-700">
+                  We take your complex history—data, timeline, key questions—and structure it into a clear research problem.
+                </p>
+              </div>
+
+              <div className="bg-white rounded-xl border-2 border-neutral-200 p-8">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-brand-gold/20">
+                    <Database className="h-6 w-6 text-brand-navy" />
+                  </div>
+                  <h3 className="text-xl font-bold text-brand-navy">Evidence-Driven Analysis</h3>
+                </div>
+                <p className="text-neutral-700">
+                  We deploy multiple AI models, but we anchor every output to external evidence: peer-reviewed literature, clinical data, and domain-appropriate references.
+                </p>
+              </div>
+
+              <div className="bg-white rounded-xl border-2 border-neutral-200 p-8">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-brand-blue/20">
+                    <CheckCircle className="h-6 w-6 text-brand-blue" />
+                  </div>
+                  <h3 className="text-xl font-bold text-brand-navy">Triangulation & Synthesis</h3>
+                </div>
+                <p className="text-neutral-700">
+                  Independent analyses are compared, challenged, and cross-checked. We look for where models and sources converge, where they diverge, and why.
+                </p>
+              </div>
+
+              <div className="bg-white rounded-xl border-2 border-neutral-200 p-8">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-brand-gold/20">
+                    <FileCheck className="h-6 w-6 text-brand-navy" />
+                  </div>
+                  <h3 className="text-xl font-bold text-brand-navy">Deliverable</h3>
+                </div>
+                <p className="text-neutral-700">
+                  You receive a professional, structured report. Not just an answer—a roadmap for a data-driven conversation with your doctor or other decision-makers.
+                </p>
+              </div>
+            </div>
+          </Container>
+        </section>
+
+        {/* Where We Apply This */}
+        <section className="bg-neutral-50 py-16 lg:py-24">
+          <Container size="narrow">
+            <h2 className="text-3xl font-bold text-brand-navy mb-6 text-center">
+              Where We Apply This
+            </h2>
+            <div className="space-y-4 text-neutral-700 text-lg">
+              <p className="font-semibold text-brand-navy">
+                SparkData is a methodology-first, verticals-second company.
+              </p>
+              <p>
+                In our health & medical analysis flagship, we help you untangle complex regimens and symptoms. We don&apos;t replace your doctor—we empower you to have a higher-quality conversation with them. By organizing the chaos of data into a clear evidence picture, we bridge the knowledge gap between patient and provider.
+              </p>
+              <p>
+                The same methodology powers our career services vertical, Southwest Resume Services, where we apply multi-model analysis and evidence-backed testing to optimize careers for real-world hiring pipelines.
+              </p>
+              <p className="italic">
+                Different verticals. Same spine: AI + evidence + structure.
               </p>
             </div>
           </Container>
         </section>
 
-        {/* Our Commitment */}
-        <section className="bg-neutral-50 py-16 lg:py-24">
+        {/* The Challenge */}
+        <section className="py-16 lg:py-24">
+          <Container size="narrow">
+            <h2 className="text-3xl font-bold text-brand-navy mb-6 text-center">
+              The Challenge: Conversation vs. Precision
+            </h2>
+            <div className="space-y-4 text-neutral-700 text-lg">
+              <p>
+                Modern AI models are incredible at conversation. They&apos;re optimized to be helpful, fluent, and engaging. For everyday questions, that&apos;s perfect.
+              </p>
+              <p>
+                But for high-stakes analysis, &quot;helpful&quot; isn&apos;t always enough. A conversational model may:
+              </p>
+              <ul className="list-disc pl-8 space-y-2">
+                <li>smooth over conflicts,</li>
+                <li>agree with a flawed premise just to keep the dialogue flowing, or</li>
+                <li>sound more certain than the underlying evidence justifies.</li>
+              </ul>
+              <p className="font-semibold text-brand-navy">
+                We don&apos;t think this is a malice issue—it&apos;s an optimization issue. Standard AI is optimized for engagement. SparkData is optimized for precision.
+              </p>
+            </div>
+          </Container>
+        </section>
+
+        {/* The Precision Protocol */}
+        <section className="bg-gradient-to-b from-neutral-50 to-white py-16 lg:py-24">
           <Container>
-            <div className="mx-auto max-w-3xl text-center mb-12">
-              <h2 className="text-3xl font-bold text-brand-navy mb-4">Our Commitment</h2>
+            <div className="mx-auto max-w-3xl mb-12 text-center">
+              <h2 className="text-3xl font-bold text-brand-navy mb-4">
+                Our Solution: The Precision Protocol
+              </h2>
+              <p className="text-lg text-neutral-700">
+                We built a system that lets you benefit from the incredible speed and reach of AI, without worrying about its &quot;soft edges.&quot;
+              </p>
             </div>
 
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+            <div className="grid gap-8 md:grid-cols-3">
+              <div className="bg-white rounded-xl border-2 border-brand-navy/20 p-8">
+                <div className="text-4xl font-bold text-brand-gold mb-4">1</div>
+                <h3 className="text-xl font-bold text-brand-navy mb-3">
+                  Independence by Design
+                </h3>
+                <p className="text-neutral-700">
+                  We run multiple leading models (GPT-class, Claude-class, Gemini-class) in isolation. They don&apos;t see each other&apos;s reasoning or conclusions. When they agree, it&apos;s because the underlying evidence is strong—not because they&apos;re echoing each other.
+                </p>
+              </div>
+
+              <div className="bg-white rounded-xl border-2 border-brand-navy/20 p-8">
+                <div className="text-4xl font-bold text-brand-gold mb-4">2</div>
+                <h3 className="text-xl font-bold text-brand-navy mb-3">
+                  Structured Verification
+                </h3>
+                <p className="text-neutral-700">
+                  We use a blind review process. When a finding is checked, the reviewing system sees only the relevant data and the claim to evaluate—not the previous narrative. This forces a fresh look at the facts.
+                </p>
+                <p className="text-neutral-700 mt-3">
+                  When agreement is suspiciously high, we don&apos;t celebrate—we trigger a devil&apos;s-advocate review to challenge the consensus and find what everyone might be missing.
+                </p>
+              </div>
+
+              <div className="bg-white rounded-xl border-2 border-brand-navy/20 p-8">
+                <div className="text-4xl font-bold text-brand-gold mb-4">3</div>
+                <h3 className="text-xl font-bold text-brand-navy mb-3">
+                  Anchoring to Authority
+                </h3>
+                <p className="text-neutral-700">
+                  We ground every AI insight in external reality. By constantly checking outputs against established sources (peer-reviewed studies, clinical data, technical standards), we ensure the results are not just plausible, but as strong as the current evidence allows.
+                </p>
+              </div>
+            </div>
+          </Container>
+        </section>
+
+        {/* Standards-Aligned Governance */}
+        <section className="py-16 lg:py-24">
+          <Container>
+            <div className="mx-auto max-w-3xl text-center mb-12">
+              <h2 className="text-3xl font-bold text-brand-navy mb-4">
+                Standards-Aligned Governance
+              </h2>
+              <p className="text-lg text-neutral-700">
+                We believe the future of AI is safe, transparent, and regulated—and we&apos;d rather build for that future now. Our operations align with the highest emerging global standards:
+              </p>
+            </div>
+
+            <div className="grid gap-8 md:grid-cols-3">
               <div className="text-center">
                 <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-brand-navy/10">
                   <Shield className="h-8 w-8 text-brand-navy" />
                 </div>
                 <h3 className="text-lg font-bold text-brand-navy mb-2">
-                  Transparency in Methodology
+                  AICPA Quality Management
                 </h3>
                 <p className="text-sm text-neutral-700">
-                  We disclose which AI models we use, how we verify outputs, and what limitations
-                  exist in our analyses.
+                  Risk-based verification and monitoring
                 </p>
               </div>
 
               <div className="text-center">
                 <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-brand-gold/20">
-                  <TrendingUp className="h-8 w-8 text-brand-navy" />
+                  <BookOpen className="h-8 w-8 text-brand-navy" />
                 </div>
                 <h3 className="text-lg font-bold text-brand-navy mb-2">
-                  Compliance with Global Standards
+                  EU AI Act Principles
                 </h3>
                 <p className="text-sm text-neutral-700">
-                  We align with AICPA QM, EU AI Act, and PCAOB guidance — not because we have to,
-                  but because it&apos;s the right approach.
+                  Technical documentation and human oversight
                 </p>
               </div>
 
               <div className="text-center">
                 <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-brand-blue/20">
-                  <Users className="h-8 w-8 text-brand-blue" />
+                  <Target className="h-8 w-8 text-brand-blue" />
                 </div>
                 <h3 className="text-lg font-bold text-brand-navy mb-2">
-                  Client Empowerment
+                  PCAOB-Style Expectations
                 </h3>
                 <p className="text-sm text-neutral-700">
-                  Our goal is to give you evidence-based insights that help you make informed
-                  decisions with your healthcare providers.
-                </p>
-              </div>
-
-              <div className="text-center">
-                <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-brand-gold/20">
-                  <Target className="h-8 w-8 text-brand-navy" />
-                </div>
-                <h3 className="text-lg font-bold text-brand-navy mb-2">
-                  Continuous Improvement
-                </h3>
-                <p className="text-sm text-neutral-700">
-                  We track model performance through scorecards, learn from every analysis, and
-                  evolve our methods as the field advances.
+                  Professional skepticism and audit trails
                 </p>
               </div>
             </div>
@@ -144,59 +317,54 @@ export default function AboutPage() {
               <div className="lg:col-span-2 space-y-8">
                 <div>
                   <h2 className="text-3xl font-bold text-brand-navy mb-4">
-                    Leadership: Ryan Zimmerman, CEO
+                    Leadership
                   </h2>
+                  <h3 className="text-xl font-semibold text-brand-navy mb-4">
+                    Ryan Zimmerman – Founder & CEO
+                  </h3>
                   <div className="space-y-4 text-neutral-700">
-                    <p className="text-lg">
-                      Ryan founded SparkData Analytics with a vision to bridge the gap between
-                      powerful AI capabilities and the rigorous quality controls needed for
-                      high-stakes analysis.
-                    </p>
                     <p>
-                      Recognizing that AI governance was evolving faster than most organizations
-                      could adapt, Ryan chose a proactive approach: study the emerging frameworks
-                      from AICPA, the EU AI Act, and PCAOB, and build those best practices into
-                      operations from day one.
-                    </p>
-                    <p>
-                      This commitment to transparency, verification, and continuous improvement
-                      defines SparkData&apos;s culture and methodology.
+                      Ryan founded SparkData with a background in systems engineering, data analysis, and biophysics. He saw a growing gap between how powerful AI had become and how casually it was being used for serious questions.
                     </p>
                   </div>
                 </div>
 
-                <div className="rounded-2xl border-2 border-brand-gold/30 bg-gradient-to-br from-brand-navy to-brand-navy-light p-8 text-white">
-                  <blockquote className="text-xl italic mb-4">
-                    &quot;When there are no clear rules, follow the people who are building them. We
-                    chose to align with global AI governance standards not because we have to, but
-                    because it&apos;s the right way to use these powerful tools responsibly.&quot;
+                <div className="rounded-2xl border-2 border-brand-gold/30 bg-gradient-to-br from-brand-navy to-brand-navy-light p-8 text-white space-y-4">
+                  <blockquote className="text-lg italic">
+                    &quot;I love this technology. I genuinely believe it can solve problems we used to think were impossible.
                   </blockquote>
-                  <p className="font-semibold">— Ryan Zimmerman, CEO</p>
+                  <blockquote className="text-lg italic">
+                    But I also watched the industry race to make models more &apos;friendly&apos; and conversational. Models like GPT-4o showed how quickly the world can fall in love with personality. That&apos;s great for everyday use—but for forensic analysis or health data, you don&apos;t need a friend. You need a fact-checker.
+                  </blockquote>
+                  <blockquote className="text-lg italic">
+                    I realized that if we want to use these amazing tools for serious things, we need a layer of rigor on top of them. We need to bridge the gap between the &apos;chat&apos; interface everyone loves and the &apos;clinical precision&apos; everyone needs.
+                  </blockquote>
+                  <blockquote className="text-lg italic">
+                    That&apos;s what SparkData is. It&apos;s the infrastructure that lets us unlock the full potential of AI—without flying blind.&quot;
+                  </blockquote>
+                  <p className="font-semibold pt-4">— Ryan Zimmerman, CEO</p>
+                </div>
+
+                <div className="bg-brand-gold/10 border-2 border-brand-gold/30 rounded-xl p-6">
+                  <p className="text-lg font-semibold text-brand-navy italic text-center">
+                    Ryan&apos;s philosophy defines SparkData&apos;s culture: AI is the engine. We build the steering, brakes, and instrumentation.
+                  </p>
                 </div>
               </div>
             </div>
           </Container>
         </section>
 
-        {/* Why Now */}
-        <section className="bg-gradient-to-b from-neutral-50 to-white py-16 lg:py-24">
+        {/* Disclaimer */}
+        <section className="bg-neutral-50 py-16 lg:py-24">
           <Container size="narrow">
-            <h2 className="text-3xl font-bold text-brand-navy mb-6 text-center">
-              Why We Built This Now
-            </h2>
-            <div className="space-y-4 text-neutral-700 text-lg">
-              <p>
-                AI governance is still evolving. Many organizations are taking a &quot;wait and
-                see&quot; approach — waiting for regulations to force compliance before adapting.
-              </p>
-              <p>
-                We believe there&apos;s a better path: study what the best organizations and
-                regulatory bodies are doing, and build those practices into operations now.
-              </p>
-              <p>
-                By aligning with emerging standards from the start, we&apos;re not just preparing
-                for the future — we&apos;re building trust through transparency, verification, and
-                accountability today.
+            <div className="bg-white border-2 border-brand-navy/20 rounded-2xl p-8">
+              <div className="flex items-start gap-4 mb-4">
+                <AlertTriangle className="h-6 w-6 text-brand-navy flex-shrink-0 mt-1" />
+                <h2 className="text-2xl font-bold text-brand-navy">Important Disclaimer</h2>
+              </div>
+              <p className="text-neutral-700 leading-relaxed">
+                SparkData Analytics is an independent research organization providing evidence synthesis for educational and informational purposes only. We are not a substitute for professional medical, legal, financial, or other licensed advice. Our reports do not constitute diagnosis, treatment plans, legal opinions, or investment advice. All decisions – especially in areas like health, law, and finance – must be made in consultation with appropriately qualified professionals.
               </p>
             </div>
           </Container>
@@ -207,16 +375,15 @@ export default function AboutPage() {
           <Container>
             <div className="mx-auto max-w-3xl text-center">
               <h2 className="text-3xl font-bold text-white mb-6">
-                Ready to Experience Rigorous Analysis?
+                Ready to Experience Precision Analysis?
               </h2>
               <p className="text-xl text-neutral-200 mb-8">
-                Discover how our triangulation methodology and quality controls can help you turn
-                complex problems into actionable intelligence.
+                Discover how our multi-model methodology and evidence-based approach can help you turn complex questions into clear, actionable insights.
               </p>
               <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
                 <Button asChild size="lg" variant="secondary">
                   <Link href="/contact">
-                    Get Started <ArrowRight className="h-5 w-5" />
+                    Schedule a Consultation <ArrowRight className="h-5 w-5" />
                   </Link>
                 </Button>
                 <Button
@@ -225,7 +392,7 @@ export default function AboutPage() {
                   variant="outline"
                   className="border-white text-white hover:bg-white hover:text-brand-navy"
                 >
-                  <Link href="/approach">Learn Our Methodology</Link>
+                  <Link href="/approach">View Our Methodology</Link>
                 </Button>
               </div>
             </div>
