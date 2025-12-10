@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Container } from '@/components/ui/Container';
 import { Button } from '@/components/ui/Button';
 import { Badge } from '@/components/ui/Badge';
@@ -127,37 +128,51 @@ export default function AboutPage() {
         {/* Founder Section */}
         <section className="py-16 lg:py-24">
           <Container>
-            <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
-              <div>
-                <h2 className="text-3xl font-bold text-brand-navy mb-4">
-                  Leadership: Ryan Zimmerman, CEO
-                </h2>
-                <div className="space-y-4 text-neutral-700">
-                  <p className="text-lg">
-                    Ryan founded SparkData Analytics with a vision to bridge the gap between
-                    powerful AI capabilities and the rigorous quality controls needed for
-                    high-stakes analysis.
-                  </p>
-                  <p>
-                    Recognizing that AI governance was evolving faster than most organizations
-                    could adapt, Ryan chose a proactive approach: study the emerging frameworks
-                    from AICPA, the EU AI Act, and PCAOB, and build those best practices into
-                    operations from day one.
-                  </p>
-                  <p>
-                    This commitment to transparency, verification, and continuous improvement
-                    defines SparkData&apos;s culture and methodology.
-                  </p>
+            <div className="grid gap-12 lg:grid-cols-3 lg:gap-16 items-center">
+              {/* Headshot */}
+              <div className="flex justify-center">
+                <div className="w-full max-w-sm rounded-2xl overflow-hidden border-4 border-brand-gold/30 shadow-xl">
+                  <img
+                    src="/ryan-zimmerman-headshot.jpg"
+                    alt="Ryan Zimmerman, CEO of SparkData Analytics"
+                    className="w-full h-auto block"
+                  />
                 </div>
               </div>
 
-              <div className="rounded-2xl border-2 border-brand-gold/30 bg-gradient-to-br from-brand-navy to-brand-navy-light p-8 text-white">
-                <blockquote className="text-xl italic mb-4">
-                  &quot;When there are no clear rules, follow the people who are building them. We
-                  chose to align with global AI governance standards not because we have to, but
-                  because it&apos;s the right way to use these powerful tools responsibly.&quot;
-                </blockquote>
-                <p className="font-semibold">— Ryan Zimmerman, CEO</p>
+              {/* Bio */}
+              <div className="lg:col-span-2 space-y-8">
+                <div>
+                  <h2 className="text-3xl font-bold text-brand-navy mb-4">
+                    Leadership: Ryan Zimmerman, CEO
+                  </h2>
+                  <div className="space-y-4 text-neutral-700">
+                    <p className="text-lg">
+                      Ryan founded SparkData Analytics with a vision to bridge the gap between
+                      powerful AI capabilities and the rigorous quality controls needed for
+                      high-stakes analysis.
+                    </p>
+                    <p>
+                      Recognizing that AI governance was evolving faster than most organizations
+                      could adapt, Ryan chose a proactive approach: study the emerging frameworks
+                      from AICPA, the EU AI Act, and PCAOB, and build those best practices into
+                      operations from day one.
+                    </p>
+                    <p>
+                      This commitment to transparency, verification, and continuous improvement
+                      defines SparkData&apos;s culture and methodology.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="rounded-2xl border-2 border-brand-gold/30 bg-gradient-to-br from-brand-navy to-brand-navy-light p-8 text-white">
+                  <blockquote className="text-xl italic mb-4">
+                    &quot;When there are no clear rules, follow the people who are building them. We
+                    chose to align with global AI governance standards not because we have to, but
+                    because it&apos;s the right way to use these powerful tools responsibly.&quot;
+                  </blockquote>
+                  <p className="font-semibold">— Ryan Zimmerman, CEO</p>
+                </div>
               </div>
             </div>
           </Container>
