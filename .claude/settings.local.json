@@ -21,7 +21,10 @@
       "Bash(set VERCEL_TOKEN=PvFJaCVjjqOiShWwKiY0egx9)",
       "Bash(powershell.exe -ExecutionPolicy Bypass -File deploy-with-token.ps1)",
       "Bash(curl:*)",
-      "Bash(nslookup:*)"
+      "Bash(nslookup:*)",
+      "Bash(cat:*)",
+      "Bash(npm run dev:*)",
+      "Bash(findstr:*)"
     ],
     "deny": [],
     "ask": []

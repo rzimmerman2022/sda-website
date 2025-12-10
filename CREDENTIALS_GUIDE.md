@@ -69,7 +69,28 @@ $env:VERCEL_TOKEN=xxx          # PowerShell - doesn't work
 
 **File:** [.env.spaceship.local](.env.spaceship.local)
 
-### API Credentials
+### Domain History
+
+- **Domain:** sparkdatalab.ai
+- **Previous Registrar:** Wix
+- **Current Registrar:** Spaceship
+- **Transfer Method:** EPP authorization code from Wix
+- **Status:** Transfer complete, DNS fully managed at Spaceship
+
+### Dashboard Login Credentials
+```
+Email: rzimmerman2018@gmail.com
+Password: Welectric9191!
+Dashboard: https://spaceship.com/login
+```
+
+**When to use dashboard:**
+- Manual DNS record changes
+- Domain management tasks
+- Viewing billing and account settings
+- Troubleshooting when API is unavailable
+
+### API Credentials (for automated access)
 ```
 SPACESHIP_API_KEY=CzoHGOwSXsejPTWnBqmq
 SPACESHIP_API_SECRET=k9GdSkqSnaKn1YxeSDMLCS3d4OA51ZdzIYyUWfjAiaq5Pp1GI1FfYovJBvmw1e8t

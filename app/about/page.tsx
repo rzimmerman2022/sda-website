@@ -239,7 +239,7 @@ export default function AboutPage() {
                   Anchoring to Authority
                 </h3>
                 <p className="text-neutral-700">
-                  We ground every AI insight in external reality. By constantly checking outputs against established sources (peer-reviewed studies, clinical data, technical standards), we ensure the results are not just plausible, but as strong as the current evidence allows.
+                  We ground every AI insight in external reality. By systematically checking outputs against established sources (peer-reviewed studies, clinical data, technical standards), we work to ensure the results are not just plausible, but as strong as the current evidence allows.
                 </p>
               </div>
             </div>
@@ -337,7 +337,7 @@ export default function AboutPage() {
                     But I also watched the industry race to make models more &apos;friendly&apos; and conversational. Models like GPT-4o showed how quickly the world can fall in love with personality. That&apos;s great for everyday use—but for forensic analysis or health data, you don&apos;t need a friend. You need a fact-checker.
                   </blockquote>
                   <blockquote className="text-lg italic">
-                    I realized that if we want to use these amazing tools for serious things, we need a layer of rigor on top of them. We need to bridge the gap between the &apos;chat&apos; interface everyone loves and the &apos;clinical precision&apos; everyone needs.
+                    If we want to use these tools for serious things, we need a layer of rigor on top of them—a way to bridge the gap between the &apos;chat&apos; interface everyone loves and the &apos;clinical precision&apos; everyone needs.
                   </blockquote>
                   <blockquote className="text-lg italic">
                     That&apos;s what SparkData is. It&apos;s the infrastructure that lets us unlock the full potential of AI—without flying blind.&quot;
@@ -363,9 +363,14 @@ export default function AboutPage() {
                 <AlertTriangle className="h-6 w-6 text-brand-navy flex-shrink-0 mt-1" />
                 <h2 className="text-2xl font-bold text-brand-navy">Important Disclaimer</h2>
               </div>
-              <p className="text-neutral-700 leading-relaxed">
-                SparkData Analytics is an independent research organization providing evidence synthesis for educational and informational purposes only. We are not a substitute for professional medical, legal, financial, or other licensed advice. Our reports do not constitute diagnosis, treatment plans, legal opinions, or investment advice. All decisions – especially in areas like health, law, and finance – must be made in consultation with appropriately qualified professionals.
-              </p>
+              <div className="space-y-4 text-neutral-700 leading-relaxed">
+                <p>
+                  SparkData Analytics is an independent research organization providing evidence synthesis for educational and informational purposes only. We are not a substitute for professional medical, legal, financial, or other licensed advice. Our reports do not constitute diagnosis, treatment plans, legal opinions, or investment advice.
+                </p>
+                <p>
+                  All decisions – especially in areas like health, law, and finance – must be made in consultation with appropriately qualified professionals.
+                </p>
+              </div>
             </div>
           </Container>
         </section>
