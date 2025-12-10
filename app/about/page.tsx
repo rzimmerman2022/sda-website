@@ -35,48 +35,16 @@ export default function AboutPage() {
                   SparkData Analytics is an independent research organization. We exist to apply forensic-grade verification to high-stakes AI analysis.
                 </p>
                 <p className="text-xl font-semibold text-brand-navy">
+                  Raw AI models deal in probability. We deal in evidence.
+                </p>
+                <p>
+                  We don&apos;t just &quot;use&quot; AI models. We run them through a structured Precision Protocol that enforces independence, challenges consensus, and anchors every conclusion to the strongest available evidence in the domain.
+                </p>
+                <p className="text-xl font-semibold text-brand-navy">
                   We provide the &quot;Trust Layer&quot; between you and the AI.
                 </p>
                 <p>
                   We combine multi-model synthesis with audit-grade quality controls to turn complex data into clear, evidence-based insights you can confidently take to a professional.
-                </p>
-              </div>
-            </div>
-          </Container>
-        </section>
-
-        {/* What Makes Us Different */}
-        <section className="py-16 lg:py-24 bg-white">
-          <Container>
-            <div className="mx-auto max-w-3xl mb-12 text-center">
-              <h2 className="text-3xl font-bold text-brand-navy mb-6">What Makes Us Different</h2>
-              <p className="text-xl text-neutral-700 font-semibold mb-4">
-                Raw AI models deal in probability. We deal in evidence.
-              </p>
-              <p className="text-lg text-neutral-700">
-                We don&apos;t just &quot;use&quot; AI models. We run them through a documented, repeatable verification protocol built on three hard constraints:
-              </p>
-            </div>
-
-            <div className="grid gap-8 md:grid-cols-3">
-              <div className="bg-gradient-to-br from-brand-navy to-brand-navy-light rounded-xl p-8 text-white">
-                <h3 className="text-xl font-bold mb-4">True Isolation</h3>
-                <p>
-                  Models can&apos;t see each other&apos;s work. When they agree, it&apos;s because the evidence is strong—not because they&apos;re echoing each other.
-                </p>
-              </div>
-
-              <div className="bg-gradient-to-br from-brand-gold to-yellow-600 rounded-xl p-8 text-brand-navy">
-                <h3 className="text-xl font-bold mb-4">Adversarial Triggers</h3>
-                <p>
-                  High consensus gets challenged, not celebrated. We manufacture the friction that &quot;helpful&quot; AI tries to avoid.
-                </p>
-              </div>
-
-              <div className="bg-gradient-to-br from-brand-blue to-blue-600 rounded-xl p-8 text-white">
-                <h3 className="text-xl font-bold mb-4">Evidence Anchoring</h3>
-                <p>
-                  No claim leaves without a citation. AI generates hypotheses; peer-reviewed literature validates them.
                 </p>
               </div>
             </div>
@@ -89,7 +57,7 @@ export default function AboutPage() {
             <div className="mx-auto max-w-3xl mb-12 text-center">
               <h2 className="text-3xl font-bold text-brand-navy mb-4">What We Do</h2>
               <p className="text-lg text-neutral-700 leading-relaxed mb-4">
-                We help you use AI for the things that actually matter. When you have a question that&apos;s too complex for a quick Google search and too important to leave to a single chatbot answer, we step in.
+                We help you use AI for the things that actually matter. When you have a question that is too complex for a quick Google search and too important to leave to a single chatbot answer, we step in.
               </p>
               <p className="text-lg text-neutral-700 leading-relaxed">
                 Our workflow bridges the gap between &quot;chatbot conversation&quot; and &quot;clinical precision&quot;:
@@ -117,7 +85,7 @@ export default function AboutPage() {
                   <h3 className="text-xl font-bold text-brand-navy">Evidence-Driven Analysis</h3>
                 </div>
                 <p className="text-neutral-700">
-                  We deploy multiple AI models, but we anchor every output to external evidence: peer-reviewed literature, clinical data, and domain-appropriate references.
+                  We harness multiple leading AI models, but we anchor them to the highest world-class gold standards—peer-reviewed literature, clinical data, and domain-appropriate references.
                 </p>
               </div>
 
@@ -162,10 +130,10 @@ export default function AboutPage() {
                 In our health & medical analysis flagship, we help you untangle complex regimens and symptoms. We don&apos;t replace your doctor—we empower you to have a higher-quality conversation with them. By organizing the chaos of data into a clear evidence picture, we bridge the knowledge gap between patient and provider.
               </p>
               <p>
-                The same methodology powers our career services vertical, Southwest Resume Services, where we apply multi-model analysis and evidence-backed testing to optimize careers for real-world hiring pipelines.
+                The same Gold Standard backbone applies to our sister brand, Southwest Resume Services, where we use multi-model analysis and evidence-backed testing to optimize careers for real-world hiring pipelines.
               </p>
               <p className="italic">
-                Different verticals. Same spine: AI + evidence + structure.
+                Different verticals. Same spine: AI + Evidence + Structure.
               </p>
             </div>
           </Container>
@@ -179,15 +147,12 @@ export default function AboutPage() {
             </h2>
             <div className="space-y-4 text-neutral-700 text-lg">
               <p>
-                Modern AI models are incredible at conversation. They&apos;re optimized to be helpful, fluent, and engaging. For everyday questions, that&apos;s perfect.
-              </p>
-              <p>
-                But for high-stakes analysis, &quot;helpful&quot; isn&apos;t always enough. A conversational model may:
+                Modern AI models are incredible at conversation. They are optimized to be helpful, fluent, and engaging. For everyday questions, that&apos;s perfect. But for high-stakes analysis, &quot;helpful&quot; isn&apos;t always enough. A conversational model may:
               </p>
               <ul className="list-disc pl-8 space-y-2">
-                <li>smooth over conflicts,</li>
-                <li>agree with a flawed premise just to keep the dialogue flowing, or</li>
-                <li>sound more certain than the underlying evidence justifies.</li>
+                <li>Smooth over conflicts to avoid friction,</li>
+                <li>Agree with a flawed premise just to keep the dialogue flowing, or</li>
+                <li>Sound more certain than the underlying evidence justifies.</li>
               </ul>
               <p className="font-semibold text-brand-navy">
                 We don&apos;t think this is a malice issue—it&apos;s an optimization issue. Standard AI is optimized for engagement. SparkData is optimized for precision.
@@ -225,10 +190,7 @@ export default function AboutPage() {
                   Structured Verification
                 </h3>
                 <p className="text-neutral-700">
-                  We use a blind review process. When a finding is checked, the reviewing system sees only the relevant data and the claim to evaluate—not the previous narrative. This forces a fresh look at the facts.
-                </p>
-                <p className="text-neutral-700 mt-3">
-                  When agreement is suspiciously high, we don&apos;t celebrate—we trigger a devil&apos;s-advocate review to challenge the consensus and find what everyone might be missing.
+                  We use a blind review process. When a finding is checked, the reviewing system sees only the relevant data and the claim to evaluate—not the previous narrative. This forces a fresh look at the facts. When agreement is suspiciously high, we trigger a devil&apos;s-advocate review to challenge the consensus and find what everyone might be missing.
                 </p>
               </div>
 
@@ -266,7 +228,7 @@ export default function AboutPage() {
                   AICPA Quality Management
                 </h3>
                 <p className="text-sm text-neutral-700">
-                  Risk-based verification and monitoring
+                  (Risk-based verification, monitoring, and documentation)
                 </p>
               </div>
 
@@ -278,7 +240,7 @@ export default function AboutPage() {
                   EU AI Act Principles
                 </h3>
                 <p className="text-sm text-neutral-700">
-                  Technical documentation and human oversight
+                  (Technical documentation, logging, and human oversight)
                 </p>
               </div>
 
@@ -290,7 +252,7 @@ export default function AboutPage() {
                   PCAOB-Style Expectations
                 </h3>
                 <p className="text-sm text-neutral-700">
-                  Professional skepticism and audit trails
+                  (Professional skepticism and complete audit trails)
                 </p>
               </div>
             </div>
