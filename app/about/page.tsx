@@ -52,7 +52,7 @@ export default function AboutPage() {
         </section>
 
         {/* What We Do */}
-        <section className="py-16 lg:py-24">
+        <section className="py-12 lg:py-16">
           <Container>
             <div className="mx-auto max-w-3xl mb-12 text-center">
               <h2 className="text-3xl font-bold text-brand-navy mb-4">What We Do</h2>
@@ -85,7 +85,7 @@ export default function AboutPage() {
                   <h3 className="text-xl font-bold text-brand-navy">Evidence-Driven Analysis</h3>
                 </div>
                 <p className="text-neutral-700">
-                  We harness multiple leading AI models, but we anchor them to the highest world-class gold standards—peer-reviewed literature, clinical data, and domain-appropriate references.
+                  We harness multiple leading AI models, but we anchor them to the highest standards in each domain—peer-reviewed literature, clinical data, and domain-appropriate references.
                 </p>
               </div>
 
@@ -117,7 +117,7 @@ export default function AboutPage() {
         </section>
 
         {/* Where We Apply This */}
-        <section className="bg-neutral-50 py-16 lg:py-24">
+        <section className="bg-neutral-50 py-12 lg:py-16">
           <Container size="narrow">
             <h2 className="text-3xl font-bold text-brand-navy mb-6 text-center">
               Where We Apply This
@@ -130,7 +130,7 @@ export default function AboutPage() {
                 In our health & medical analysis flagship, we help you untangle complex regimens and symptoms. We don&apos;t replace your doctor—we empower you to have a higher-quality conversation with them. By organizing the chaos of data into a clear evidence picture, we bridge the knowledge gap between patient and provider.
               </p>
               <p>
-                The same Gold Standard backbone applies to our sister brand, Southwest Resume Services, where we use multi-model analysis and evidence-backed testing to optimize careers for real-world hiring pipelines.
+                The same methodology powers our career services vertical, Southwest Resume Services, where we use multi-model analysis and evidence-backed testing to optimize careers for real-world hiring pipelines.
               </p>
               <p className="italic">
                 Different verticals. Same spine: AI + Evidence + Structure.
@@ -140,7 +140,7 @@ export default function AboutPage() {
         </section>
 
         {/* The Challenge */}
-        <section className="py-16 lg:py-24">
+        <section className="py-12 lg:py-16">
           <Container size="narrow">
             <h2 className="text-3xl font-bold text-brand-navy mb-6 text-center">
               The Challenge: Conversation vs. Precision
@@ -155,14 +155,14 @@ export default function AboutPage() {
                 <li>Sound more certain than the underlying evidence justifies.</li>
               </ul>
               <p className="font-semibold text-brand-navy">
-                We don&apos;t think this is a malice issue—it&apos;s an optimization issue. Standard AI is optimized for engagement. SparkData is optimized for precision.
+                We don&apos;t see this as a malice issue—it&apos;s an optimization issue. Standard AI is optimized for engagement. SparkData is optimized for precision.
               </p>
             </div>
           </Container>
         </section>
 
         {/* The Precision Protocol */}
-        <section className="bg-gradient-to-b from-neutral-50 to-white py-16 lg:py-24">
+        <section className="bg-gradient-to-b from-neutral-50 to-white py-12 lg:py-16">
           <Container>
             <div className="mx-auto max-w-3xl mb-12 text-center">
               <h2 className="text-3xl font-bold text-brand-navy mb-4">
@@ -208,7 +208,7 @@ export default function AboutPage() {
         </section>
 
         {/* Standards-Aligned Governance */}
-        <section className="py-16 lg:py-24">
+        <section className="py-12 lg:py-16">
           <Container>
             <div className="mx-auto max-w-3xl text-center mb-12">
               <h2 className="text-3xl font-bold text-brand-navy mb-4">
@@ -260,7 +260,7 @@ export default function AboutPage() {
         </section>
 
         {/* Founder Section */}
-        <section className="py-16 lg:py-24">
+        <section className="py-12 lg:py-16">
           <Container>
             <div className="grid gap-12 lg:grid-cols-3 lg:gap-16 items-center">
               {/* Headshot */}
@@ -317,7 +317,7 @@ export default function AboutPage() {
         </section>
 
         {/* Disclaimer */}
-        <section className="bg-neutral-50 py-16 lg:py-24">
+        <section className="bg-neutral-50 py-12 lg:py-16">
           <Container size="narrow">
             <div className="bg-white border-2 border-brand-navy/20 rounded-2xl p-8">
               <div className="flex items-start gap-4 mb-4">
@@ -337,7 +337,7 @@ export default function AboutPage() {
         </section>
 
         {/* CTA */}
-        <section className="bg-brand-navy py-16 lg:py-24">
+        <section className="bg-brand-navy py-12 lg:py-16">
           <Container>
             <div className="mx-auto max-w-3xl text-center">
               <h2 className="text-3xl font-bold text-white mb-6">
