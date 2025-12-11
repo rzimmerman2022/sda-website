@@ -147,7 +147,7 @@ export default function AboutPage() {
                       </div>
 
                       <div className="text-center mb-5">
-                        <span className="text-[10px] font-mono text-brand-navy tracking-[0.2em] font-bold uppercase">
+                        <span className="text-[11px] text-brand-navy tracking-[0.15em] font-bold uppercase">
                           Precision Protocol™
                         </span>
                       </div>
@@ -187,7 +187,7 @@ export default function AboutPage() {
                           Evidence Anchor
                         </div>
                         <div className="text-[10px] text-neutral-500 font-medium uppercase tracking-wide">
-                          PubMed · UpToDate · Clinical Guidelines
+                          PubMed · UpToDate · Domain Standards
                         </div>
                       </div>
                     </div>
