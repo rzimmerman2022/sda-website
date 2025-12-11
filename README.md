@@ -2,7 +2,9 @@
 
 > **Turning Complex Problems Into Actionable Intelligence**
 
-A modern, high-performance Next.js website for SparkData Analytics built with TypeScript, Tailwind CSS, and enterprise-grade quality controls.
+A modern, high-performance Next.js website for SparkData Analytics - an independent research and analytics firm applying forensic-grade verification to multi-model AI analysis across medical & health, legal & forensic research, and business operations domains.
+
+Built with Next.js 14, TypeScript, Tailwind CSS, and enterprise-grade quality controls.
 
 ---
 

@@ -1,6 +1,6 @@
 # Owner's Manual: Editing Your SparkData Analytics Website
 
-> **For non-developers**: This guide shows you how to update content, change images, and manage your website without coding knowledge.
+> **For non-developers**: This guide shows you how to update content, change images, and manage your SparkData Analytics website - an independent research and analytics firm providing forensic-grade AI verification across multiple domains.
 
 ---
 

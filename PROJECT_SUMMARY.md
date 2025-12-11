@@ -99,23 +99,36 @@ A **world-class, production-ready marketing website** for SparkData Analytics at
 **Tagline**: "Turning Complex Problems Into Actionable Intelligence"
 
 **Core Message**:
+- Independent research and analytics firm (NOT just health data)
+- Multi-domain positioning: Medical & Health (flagship), Legal & Forensic Research, Business Operations & Strategy
 - Multi-model AI triangulation (prevents echo chambers)
-- Rigorous quality controls (AICPA QM, EU AI Act, PCAOB aligned)
+- Rigorous quality controls (AICPA QM Aligned, EU AI Act Aligned, PCAOB aligned)
 - Evidence-based synthesis (scientific literature + AI)
-- Independent research organization (NOT medical advice)
+- Privacy-first approach: De-identify data before any AI analysis
+
+### Privacy & Security Messaging
+**Data Protection**:
+- De-identification before any AI call (removes PII/PHI)
+- Data minimization by design
+- No training on user data without consent
+- Full transparency and user control
 
 ### Flagship Service
-**Medical & Health Data Analysis**
+**Medical & Health Analysis**
 - Supplement interaction analysis
 - Medication conflict detection
 - Unexplained symptom investigation
 - Evidence synthesis for patient-doctor discussions
 
+### Additional Verticals
+**Legal & Forensic Research**: Evidence synthesis for complex cases, document analysis, multi-source fact verification
+**Business Operations & Strategy**: Market research, competitive intelligence, evidence-based decision support
+
 ### Methodology
-**The Triangulation Approach** (3 Pillars):
+**The Precision Protocol™** (3 Pillars):
 1. Client-Provided Data (Ground Truth)
 2. Scientific Literature (Established Knowledge)
-3. Multi-Model AI Synthesis (Computational Engine)
+3. Multi-Model AI Synthesis (Computational Engine - OpenAI GPT, Anthropic Claude, Google Gemini, Perplexity)
 
 ---
 
