@@ -78,13 +78,18 @@ export function Footer() {
 
           {/* Bottom bar */}
           <div className="mt-12 pt-8 border-t border-neutral-200">
-            <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-              <p className="text-xs text-neutral-500">
-                &copy; {currentYear} SparkData Analytics, LLC. All rights reserved.
+            <div className="flex flex-col gap-3">
+              <p className="text-xs text-neutral-600 leading-relaxed">
+                <strong>Privacy by design:</strong> We de-identify your data before any AI analysis. Raw personally identifiable information (PII/PHI) is never sent directly to external LLMs.
               </p>
-              <p className="text-xs text-neutral-500">
-                Independent Research Organization — Evidence Synthesis
-              </p>
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                <p className="text-xs text-neutral-500">
+                  &copy; {currentYear} SparkData Analytics, LLC. All rights reserved.
+                </p>
+                <p className="text-xs text-neutral-500">
+                  Independent Research & Analytics — Evidence Synthesis Across Domains
+                </p>
+              </div>
             </div>
           </div>
         </div>

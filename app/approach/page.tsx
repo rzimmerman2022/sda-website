@@ -304,6 +304,175 @@ export default function ApproachPage() {
           </Container>
         </section>
 
+        {/* Data Privacy Section */}
+        <section className="bg-gradient-to-b from-blue-50 to-white py-16 lg:py-24">
+          <Container>
+            <div className="mx-auto max-w-4xl">
+              <div className="text-center mb-12">
+                <Badge variant="secondary" className="mb-4">
+                  Privacy & Security
+                </Badge>
+                <h2 className="text-3xl font-bold text-brand-navy mb-4">
+                  How We Use AI Without Exposing Your Identity
+                </h2>
+                <p className="text-lg text-neutral-700">
+                  AI is powerful—but only if it respects privacy. Our pipeline is built so that your identity stays protected while your data is still useful for analysis.
+                </p>
+              </div>
+
+              <div className="space-y-8">
+                {/* De-Identification */}
+                <div className="bg-white rounded-2xl border-2 border-blue-200 p-8">
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-100 flex-shrink-0">
+                      <Shield className="h-6 w-6 text-blue-600" />
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold text-brand-navy mb-2">
+                        1. De-Identification Before Any AI Call
+                      </h3>
+                      <p className="text-neutral-700 mb-4">
+                        Before any information touches an AI model, we run it through a privacy layer that:
+                      </p>
+                    </div>
+                  </div>
+                  <ul className="space-y-3 ml-16">
+                    <li className="flex gap-3">
+                      <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
+                      <span className="text-neutral-700">
+                        <strong>Removes direct identifiers</strong> – names, emails, phone numbers, full street addresses, account numbers, medical record numbers, etc.
+                      </span>
+                    </li>
+                    <li className="flex gap-3">
+                      <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
+                      <span className="text-neutral-700">
+                        <strong>Generalizes or masks quasi-identifiers</strong> – e.g., exact dates of birth become age ranges (&quot;mid-40s&quot;), specific locations become regions (&quot;Phoenix metro area&quot;), and employer names may become generic (&quot;mid-size tech company&quot;).
+                      </span>
+                    </li>
+                    <li className="flex gap-3">
+                      <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
+                      <span className="text-neutral-700">
+                        <strong>Replaces entities with neutral labels</strong> – &quot;Ryan Zimmerman&quot; → &quot;Subject A&quot;, &quot;Dr. Smith&quot; → &quot;Clinician 1&quot;, &quot;Mayo Clinic – Phoenix&quot; → &quot;Hospital X&quot;.
+                      </span>
+                    </li>
+                  </ul>
+                  <p className="text-neutral-700 mt-4 ml-16 italic text-sm">
+                    Only the pseudonymous labels go to the AI models. The mapping back to real-world identities stays inside SparkData&apos;s secure environment and never leaves our systems.
+                  </p>
+                </div>
+
+                {/* Data Minimization */}
+                <div className="bg-white rounded-2xl border-2 border-blue-200 p-8">
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-100 flex-shrink-0">
+                      <Eye className="h-6 w-6 text-blue-600" />
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold text-brand-navy mb-2">
+                        2. Data Minimization by Design
+                      </h3>
+                      <p className="text-neutral-700">
+                        We don&apos;t send your entire life story to an AI model. For each question, we:
+                      </p>
+                    </div>
+                  </div>
+                  <ul className="space-y-3 ml-16">
+                    <li className="flex gap-3">
+                      <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
+                      <span className="text-neutral-700">
+                        Extract only the <strong>minimum necessary snippet</strong> (e.g., just the relevant lab set or just the last 90 days of regimen changes)
+                      </span>
+                    </li>
+                    <li className="flex gap-3">
+                      <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
+                      <span className="text-neutral-700">
+                        Strip out identifiers, and
+                      </span>
+                    </li>
+                    <li className="flex gap-3">
+                      <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
+                      <span className="text-neutral-700">
+                        Pass that de-identified slice into multiple models for analysis
+                      </span>
+                    </li>
+                  </ul>
+                  <p className="text-neutral-700 mt-4 ml-16 text-sm">
+                    This is aligned with emerging privacy standards for AI: use the smallest possible dataset, de-identify it, and document what was sent.
+                  </p>
+                </div>
+
+                {/* No Training */}
+                <div className="bg-white rounded-2xl border-2 border-blue-200 p-8">
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-100 flex-shrink-0">
+                      <AlertTriangle className="h-6 w-6 text-blue-600" />
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold text-brand-navy mb-2">
+                        3. No Training on Your Data
+                      </h3>
+                      <p className="text-neutral-700">
+                        Our policy is simple:
+                      </p>
+                    </div>
+                  </div>
+                  <ul className="space-y-3 ml-16">
+                    <li className="flex gap-3">
+                      <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
+                      <span className="text-neutral-700">
+                        We <strong>do not use your case data to train our own models</strong> without explicit, separate consent.
+                      </span>
+                    </li>
+                    <li className="flex gap-3">
+                      <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
+                      <span className="text-neutral-700">
+                        When we use third-party AI providers, we select configurations/offerings that <strong>contractually prohibit training</strong> their foundation models on your prompts and files, wherever that option is available.
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+
+                {/* You Stay in Control */}
+                <div className="bg-white rounded-2xl border-2 border-blue-200 p-8">
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-100 flex-shrink-0">
+                      <CheckCircle className="h-6 w-6 text-blue-600" />
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold text-brand-navy mb-2">
+                        4. You Stay in Control
+                      </h3>
+                      <p className="text-neutral-700">
+                        We can:
+                      </p>
+                    </div>
+                  </div>
+                  <ul className="space-y-3 ml-16">
+                    <li className="flex gap-3">
+                      <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
+                      <span className="text-neutral-700">
+                        Show you exactly what de-identified data was sent to AI models for your case
+                      </span>
+                    </li>
+                    <li className="flex gap-3">
+                      <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
+                      <span className="text-neutral-700">
+                        Delete analysis artifacts on request (subject to legal/record-keeping obligations)
+                      </span>
+                    </li>
+                    <li className="flex gap-3">
+                      <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
+                      <span className="text-neutral-700">
+                        Keep your contact and billing information in a separate, access-controlled system from your research dossier
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </Container>
+        </section>
+
         {/* How We Prevent Failures */}
         <section className="bg-gradient-to-b from-neutral-50 to-white py-16 lg:py-24">
           <Container size="narrow">

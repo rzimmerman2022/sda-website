@@ -60,12 +60,12 @@ export default function HomePage() {
               <div className="hidden sm:block h-6 w-px bg-neutral-300" />
               <div className="flex items-center gap-2">
                 <CheckCircle className="h-5 w-5 text-brand-blue" />
-                <span className="font-medium">EU AI Act Compliant</span>
+                <span className="font-medium">EU AI Act Aligned</span>
               </div>
               <div className="hidden sm:block h-6 w-px bg-neutral-300" />
               <div className="flex items-center gap-2">
                 <Sparkles className="h-5 w-5 text-brand-blue" />
-                <span className="font-medium">Independent Research Organization</span>
+                <span className="font-medium">Independent Research & Analytics</span>
               </div>
             </div>
           </Container>
@@ -142,11 +142,10 @@ export default function HomePage() {
                   Flagship Service
                 </Badge>
                 <h2 className="text-display-sm font-bold text-brand-navy mb-6">
-                  Medical & Health Data Analysis
+                  Medical & Health Analysis
                 </h2>
                 <p className="text-lg text-neutral-700 mb-6">
-                  Transform complex health situations into evidence-based insights you can bring to
-                  your medical team.
+                  Our flagship vertical: Transform complex health situations into evidence-based insights you can bring to your medical team.
                 </p>
                 <ul className="space-y-4 mb-8">
                   {[

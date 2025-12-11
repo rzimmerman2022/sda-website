@@ -6,6 +6,7 @@ import { Badge } from '@/components/ui/Badge';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { createPageMetadata } from '@/lib/metadata';
+import { PrecisionProtocolDiagram } from '@/components/about/PrecisionProtocolDiagram';
 import { Target, Shield, ArrowRight, FileText, Database, CheckCircle, FileCheck, AlertTriangle, BookOpen } from 'lucide-react';
 
 export const metadata: Metadata = createPageMetadata({
@@ -22,30 +23,59 @@ export default function AboutPage() {
       <main className="flex-1">
         {/* Hero */}
         <section className="bg-gradient-to-b from-neutral-50 to-white py-16 lg:py-24">
-          <Container size="narrow">
-            <div className="text-center">
-              <Badge variant="secondary" className="mb-4">
-                About Us
-              </Badge>
-              <h1 className="text-display-md font-bold text-brand-navy mb-6">
-                Bridging the Gap Between AI Potential and Human Trust
-              </h1>
-              <div className="space-y-4 text-lg text-neutral-700 leading-relaxed">
-                <p>
-                  SparkData Analytics is an independent research organization. We exist to apply forensic-grade verification to high-stakes AI analysis.
-                </p>
-                <p className="text-xl font-semibold text-brand-navy">
-                  Raw AI models deal in probability. We deal in evidence.
-                </p>
-                <p>
-                  We don&apos;t just &quot;use&quot; AI models. We run them through a structured Precision Protocol that enforces independence, challenges consensus, and anchors every conclusion to the strongest available evidence in the domain.
-                </p>
-                <p className="text-xl font-semibold text-brand-navy">
-                  We provide the &quot;Trust Layer&quot; between you and the AI.
-                </p>
-                <p>
-                  We combine multi-model synthesis with audit-grade quality controls to turn complex data into clear, evidence-based insights you can confidently take to a professional.
-                </p>
+          <Container>
+            <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
+              {/* Left Column - Text Content */}
+              <div>
+                <Badge variant="secondary" className="mb-4">
+                  About Us
+                </Badge>
+                <h1 className="text-display-md font-bold text-brand-navy mb-6">
+                  Bridging the Gap Between AI Potential and Human Trust
+                </h1>
+                <div className="space-y-4 text-lg text-neutral-700 leading-relaxed mb-8">
+                  <p>
+                    We apply forensic-grade verification to multi-model AI so you can use it for real decisions—not just chat.
+                  </p>
+                  <div className="bg-brand-navy text-white rounded-2xl p-6 space-y-3">
+                    <p className="text-xl font-bold">
+                      Raw AI models deal in probability.
+                    </p>
+                    <p className="text-xl font-bold">
+                      We deal in evidence.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Button asChild size="lg" variant="primary">
+                    <Link href="/contact">
+                      Schedule a Consultation
+                      <ArrowRight className="ml-2 h-5 w-5" />
+                    </Link>
+                  </Button>
+                  <Button asChild size="lg" variant="outline">
+                    <Link href="/approach">View Our Methodology</Link>
+                  </Button>
+                </div>
+                <div className="mt-8 flex flex-wrap gap-6 text-sm text-neutral-600">
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-brand-gold rounded-full"></div>
+                    <span>4+ AI models</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-brand-gold rounded-full"></div>
+                    <span>3 verification layers</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-brand-gold rounded-full"></div>
+                    <span>5-7 day turnaround</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Column - Diagram */}
+              <div className="flex justify-center lg:justify-end">
+                <PrecisionProtocolDiagram />
               </div>
             </div>
           </Container>
@@ -109,7 +139,7 @@ export default function AboutPage() {
                   <h3 className="text-xl font-bold text-brand-navy">Deliverable</h3>
                 </div>
                 <p className="text-neutral-700">
-                  You receive a professional, structured report. Not just an answer—a roadmap for a data-driven conversation with your doctor or other decision-makers.
+                  You receive a professional, structured report. Not just an answer—a roadmap for data-driven conversations with your advisors, whether that&apos;s your doctor, attorney, or executive team.
                 </p>
               </div>
             </div>
@@ -127,11 +157,19 @@ export default function AboutPage() {
                 SparkData is a methodology-first, verticals-second company.
               </p>
               <p>
-                In our health & medical analysis flagship, we help you untangle complex regimens and symptoms. We don&apos;t replace your doctor—we empower you to have a higher-quality conversation with them. By organizing the chaos of data into a clear evidence picture, we bridge the knowledge gap between patient and provider.
+                We apply our research framework to any domain where decisions are complex, evidence is scattered, and stakes are high. Our current verticals include:
               </p>
-              <p>
-                The same methodology powers our career services vertical, Southwest Resume Services, where we use multi-model analysis and evidence-backed testing to optimize careers for real-world hiring pipelines.
-              </p>
+              <ul className="list-disc pl-8 space-y-2">
+                <li>
+                  <strong>Medical & Health Analysis</strong> (flagship): Untangling complex regimens, symptoms, and treatment options. We don&apos;t replace your doctor—we organize scattered data into clear evidence so you can have higher-quality conversations with your care team.
+                </li>
+                <li>
+                  <strong>Legal & Forensic Research</strong>: Evidence synthesis for complex cases, document analysis, and multi-source fact verification.
+                </li>
+                <li>
+                  <strong>Business Operations & Strategy</strong>: Market research, competitive intelligence, and evidence-based decision support.
+                </li>
+              </ul>
               <p className="italic">
                 Different verticals. Same spine: AI + Evidence + Structure.
               </p>
@@ -168,38 +206,80 @@ export default function AboutPage() {
               <h2 className="text-3xl font-bold text-brand-navy mb-4">
                 Our Solution: The Precision Protocol
               </h2>
-              <p className="text-lg text-neutral-700">
+              <p className="text-lg text-neutral-700 mb-2">
                 We built a system that lets you benefit from the incredible speed and reach of AI, without worrying about its &quot;soft edges.&quot;
+              </p>
+              <p className="text-sm font-mono text-neutral-500 tracking-wider">
+                A REPEATABLE, DOCUMENTED PROTOCOL FOR AUDIT-READY AI ANALYSIS
               </p>
             </div>
 
             <div className="grid gap-8 md:grid-cols-3">
-              <div className="bg-white rounded-xl border-2 border-brand-navy/20 p-8">
-                <div className="text-4xl font-bold text-brand-gold mb-4">1</div>
-                <h3 className="text-xl font-bold text-brand-navy mb-3">
+              {/* Card 1 - Independence by Design */}
+              <div className="relative bg-white rounded-2xl border-2 border-neutral-300 p-8 overflow-hidden">
+                {/* Large Background Number */}
+                <div className="absolute top-0 right-0 text-[12rem] font-bold text-neutral-100 leading-none select-none pointer-events-none">
+                  01
+                </div>
+
+                {/* ACTIVE Badge */}
+                <div className="relative mb-4">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 bg-neutral-700 text-white rounded-full text-xs font-semibold">
+                    <div className="w-1.5 h-1.5 bg-white rounded-full"></div>
+                    ACTIVE
+                  </div>
+                </div>
+
+                <h3 className="relative text-xl font-bold text-brand-navy mb-4">
                   Independence by Design
                 </h3>
-                <p className="text-neutral-700">
+                <p className="relative text-neutral-700 text-sm leading-relaxed">
                   We run multiple leading models (GPT-class, Claude-class, Gemini-class) in isolation. They don&apos;t see each other&apos;s reasoning or conclusions. When they agree, it&apos;s because the underlying evidence is strong—not because they&apos;re echoing each other.
                 </p>
               </div>
 
-              <div className="bg-white rounded-xl border-2 border-brand-navy/20 p-8">
-                <div className="text-4xl font-bold text-brand-gold mb-4">2</div>
-                <h3 className="text-xl font-bold text-brand-navy mb-3">
+              {/* Card 2 - Structured Verification */}
+              <div className="relative bg-white rounded-2xl border-2 border-neutral-300 p-8 overflow-hidden">
+                {/* Large Background Number */}
+                <div className="absolute top-0 right-0 text-[12rem] font-bold text-amber-100 leading-none select-none pointer-events-none">
+                  02
+                </div>
+
+                {/* ACTIVE Badge */}
+                <div className="relative mb-4">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 bg-amber-600 text-white rounded-full text-xs font-semibold">
+                    <div className="w-1.5 h-1.5 bg-white rounded-full"></div>
+                    ACTIVE
+                  </div>
+                </div>
+
+                <h3 className="relative text-xl font-bold text-brand-navy mb-4">
                   Structured Verification
                 </h3>
-                <p className="text-neutral-700">
+                <p className="relative text-neutral-700 text-sm leading-relaxed">
                   We use a blind review process. When a finding is checked, the reviewing system sees only the relevant data and the claim to evaluate—not the previous narrative. This forces a fresh look at the facts. When agreement is suspiciously high, we trigger a devil&apos;s-advocate review to challenge the consensus and find what everyone might be missing.
                 </p>
               </div>
 
-              <div className="bg-white rounded-xl border-2 border-brand-navy/20 p-8">
-                <div className="text-4xl font-bold text-brand-gold mb-4">3</div>
-                <h3 className="text-xl font-bold text-brand-navy mb-3">
+              {/* Card 3 - Anchoring to Authority */}
+              <div className="relative bg-white rounded-2xl border-2 border-neutral-300 p-8 overflow-hidden">
+                {/* Large Background Number */}
+                <div className="absolute top-0 right-0 text-[12rem] font-bold text-blue-100 leading-none select-none pointer-events-none">
+                  03
+                </div>
+
+                {/* ACTIVE Badge */}
+                <div className="relative mb-4">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-600 text-white rounded-full text-xs font-semibold">
+                    <div className="w-1.5 h-1.5 bg-white rounded-full"></div>
+                    ACTIVE
+                  </div>
+                </div>
+
+                <h3 className="relative text-xl font-bold text-brand-navy mb-4">
                   Anchoring to Authority
                 </h3>
-                <p className="text-neutral-700">
+                <p className="relative text-neutral-700 text-sm leading-relaxed">
                   We ground every AI insight in external reality. By systematically checking outputs against established sources (peer-reviewed studies, clinical data, technical standards), we work to ensure the results are not just plausible, but as strong as the current evidence allows.
                 </p>
               </div>
@@ -295,7 +375,7 @@ export default function AboutPage() {
                     &quot;I love this technology. I genuinely believe it can solve problems we used to think were impossible.
                   </blockquote>
                   <blockquote className="text-lg italic">
-                    But I also watched the industry race to make models more &apos;friendly&apos; and conversational. Models like GPT-4o showed how quickly the world can fall in love with personality. That&apos;s great for everyday use—but for forensic analysis or health data, you don&apos;t need a friend. You need a fact-checker.
+                    But I also watched the industry race to make models more &apos;friendly&apos; and conversational. Models like GPT-4o showed how quickly the world can fall in love with personality. That&apos;s great for everyday use—but for high-stakes analysis, you don&apos;t need a friend. You need a fact-checker.
                   </blockquote>
                   <blockquote className="text-lg italic">
                     If we want to use these tools for serious things, we need a layer of rigor on top of them—a way to bridge the gap between the &apos;chat&apos; interface everyone loves and the &apos;clinical precision&apos; everyone needs.
@@ -326,10 +406,10 @@ export default function AboutPage() {
               </div>
               <div className="space-y-4 text-neutral-700 leading-relaxed">
                 <p>
-                  SparkData Analytics is an independent research organization providing evidence synthesis for educational and informational purposes only. We are not a substitute for professional medical, legal, financial, or other licensed advice. Our reports do not constitute diagnosis, treatment plans, legal opinions, or investment advice.
+                  SparkData Analytics is an independent research and analytics firm. We provide evidence synthesis and analysis for educational and informational purposes only. We are not a substitute for professional medical, legal, financial, or other licensed advice. Our reports do not constitute diagnosis, treatment plans, legal opinions, or investment advice.
                 </p>
                 <p>
-                  All decisions – especially in areas like health, law, and finance – must be made in consultation with appropriately qualified professionals.
+                  All decisions—especially in areas like health, law, and finance—must be made in consultation with appropriately qualified and licensed professionals who know your specific situation.
                 </p>
               </div>
             </div>

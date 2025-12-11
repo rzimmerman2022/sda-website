@@ -6,7 +6,7 @@ import { cn } from '@/lib/utils';
 
 interface AccordionItemProps {
   question: string;
-  answer: string;
+  answer: string | React.ReactNode;
   defaultOpen?: boolean;
 }
 
@@ -43,7 +43,7 @@ export function AccordionItem({ question, answer, defaultOpen = false }: Accordi
 }
 
 interface AccordionProps {
-  items: Array<{ question: string; answer: string }>;
+  items: Array<{ question: string; answer: string | React.ReactNode }>;
 }
 
 export function Accordion({ items }: AccordionProps) {

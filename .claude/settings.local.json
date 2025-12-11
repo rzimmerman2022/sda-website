@@ -24,7 +24,11 @@
       "Bash(nslookup:*)",
       "Bash(cat:*)",
       "Bash(npm run dev:*)",
-      "Bash(findstr:*)"
+      "Bash(findstr:*)",
+      "Bash(git log:*)",
+      "Bash(npm install)",
+      "Bash(lsof:*)",
+      "Bash(python3:*)"
     ],
     "deny": [],
     "ask": []

@@ -18,9 +18,9 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = createPageMetadata({
-  title: 'Medical & Health Data Analysis Services',
+  title: 'Medical & Health Analysis Services — SparkData Analytics',
   description:
-    'Transform complex health situations into evidence-based insights through multi-model AI analysis and scientific literature triangulation.',
+    'Our flagship vertical: Transform complex health situations into evidence-based insights through multi-model AI analysis and scientific literature triangulation.',
   path: '/services',
   keywords: [
     'medical data analysis',
@@ -28,6 +28,7 @@ export const metadata: Metadata = createPageMetadata({
     'supplement interactions',
     'medication conflict analysis',
     'AI health research',
+    'evidence synthesis',
   ],
 });
 
@@ -44,11 +45,13 @@ export default function ServicesPage() {
                 Flagship Service
               </Badge>
               <h1 className="text-display-md font-bold text-brand-navy mb-6">
-                Medical & Health Data Analysis
+                Medical & Health Analysis
               </h1>
-              <p className="text-xl text-neutral-700 leading-relaxed">
-                Transform complex health situations into evidence-based insights you can bring to
-                your medical team.
+              <p className="text-xl text-neutral-700 leading-relaxed mb-4">
+                Transform complex health situations into evidence-based insights you can bring to your medical team.
+              </p>
+              <p className="text-sm text-neutral-600 italic">
+                Part of SparkData&apos;s multi-domain research and analytics services
               </p>
             </div>
           </Container>
@@ -95,6 +98,9 @@ export default function ServicesPage() {
                       </span>
                     </li>
                   </ul>
+                  <p className="text-sm bg-blue-50 border-l-4 border-blue-600 p-4 rounded mt-6">
+                    <strong>Privacy first:</strong> All AI analysis is performed on de-identified case data. We remove direct identifiers and use neutral labels before sending any information to AI research platforms.
+                  </p>
                 </div>
               </div>
 
@@ -103,15 +109,15 @@ export default function ServicesPage() {
                 <div className="flex gap-3 mb-4">
                   <AlertCircle className="h-6 w-6 flex-shrink-0 mt-0.5" />
                   <p className="text-neutral-100">
-                    SparkData Analytics is an <strong>independent research organization</strong>.
+                    SparkData Analytics is an <strong>independent research and analytics firm</strong>.
                     We provide evidence synthesis and analysis for educational and informational
-                    purposes only.
+                    purposes only. This service focuses on medical and health-related data and is not a substitute for care from a licensed healthcare provider.
                   </p>
                 </div>
                 <p className="text-neutral-200 text-sm">
                   This is <strong>not medical advice</strong>. All health-related decisions,
                   including changes in medication, supplementation, and diet, must be made in
-                  consultation with a qualified healthcare professional.
+                  consultation with a qualified healthcare professional who knows your specific situation.
                 </p>
               </div>
             </div>

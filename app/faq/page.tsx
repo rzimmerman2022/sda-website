@@ -20,17 +20,25 @@ const faqs = [
   {
     question: 'What is SparkData Analytics?',
     answer:
-      'SparkData Analytics is an independent research organization that combines multi-model AI analysis with rigorous quality controls to transform complex problems into actionable intelligence. Our flagship service is medical and health data analysis, where we help individuals understand complex health situations through evidence-based synthesis.',
+      'SparkData Analytics is an independent research and analytics firm that combines multi-model AI analysis with rigorous quality controls to transform complex problems into actionable intelligence. We apply our methodology across multiple domains including medical & health analysis (our flagship vertical), legal & forensic research, and business operations. Think of us as a research partner for high-stakes decisions where evidence matters.',
   },
   {
-    question: 'Is this medical advice?',
+    question: 'Do you provide professional advice (medical, legal, financial)?',
     answer:
-      'No. SparkData Analytics provides evidence synthesis and analysis for educational and informational purposes only. We are not medical professionals, and our reports do not constitute medical advice. All health-related decisions, including changes in medication, supplementation, and diet, must be made in consultation with a qualified healthcare professional. Think of us as providing research support to inform discussions with your doctor.',
+      'No. SparkData Analytics provides research, evidence synthesis, and analysis for educational and informational purposes only. We are not licensed professionals in medicine, law, or finance, and our reports do not constitute professional advice, diagnosis, legal opinions, or investment recommendations. All decisions—especially in areas like health, law, and finance—must be made in consultation with appropriately qualified and licensed professionals who know your specific situation. Think of us as providing research support to inform discussions with your advisors.',
   },
   {
     question: 'How is this different from just asking ChatGPT or Claude myself?',
     answer:
-      'Great question! While you could ask a single AI model, our approach provides several key advantages: (1) Multi-model triangulation - we analyze your case independently across GPT-5, Claude Opus, Gemini, and Perplexity to prevent "echo chamber" errors. (2) Scientific literature integration - we cross-reference AI findings with peer-reviewed research from PubMed and clinical databases. (3) Rigorous quality controls - we use fresh chat sessions, adversarial review, and systematic verification aligned with global AI governance standards. (4) Structured methodology - our 5-phase process ensures comprehensive analysis rather than one-off queries. (5) Professional reporting - you receive a formatted evidence synthesis report designed for healthcare collaboration.',
+      'Great question! While you could ask a single AI model, our approach provides several key advantages: (1) Multi-model triangulation - we analyze your case independently across GPT, Claude, Gemini, and Perplexity to prevent "echo chamber" errors. (2) Domain-appropriate evidence integration - we cross-reference AI findings with authoritative sources (peer-reviewed research, legal databases, industry standards, etc.). (3) Rigorous quality controls - we use fresh chat sessions, adversarial review, and systematic verification aligned with global AI governance standards. (4) Structured methodology - our 5-phase process ensures comprehensive analysis rather than one-off queries. (5) Professional reporting - you receive a formatted evidence synthesis report designed for collaboration with your advisors.',
+  },
+  {
+    question: 'Do you send my personal data directly into AI models?',
+    answer: (
+      <>
+        Short answer: No, we don&apos;t paste your raw identity into chatbots. Before any information touches an AI model, we: (1) Remove direct identifiers like your name, email, phone number, street address, and medical record numbers. (2) Replace them with neutral labels (e.g., &quot;Subject A&quot;, &quot;Physician 1&quot;, &quot;Hospital X&quot;). (3) Limit context so only the relevant, de-identified portion of your case is analyzed. The AI systems see cases, not people: <strong>de-identified</strong> timelines, lab values, medication regimens, and symptom patterns—not your full identity. We also do not use your case data to train our own models without explicit consent, and we select AI providers/settings that prohibit training their base models on your prompts wherever that is available.
+      </>
+    ),
   },
   {
     question: 'What AI models do you use?',
@@ -40,12 +48,12 @@ const faqs = [
   {
     question: 'How do you ensure quality and accuracy?',
     answer:
-      'We align with global AI governance standards including AICPA Quality Management, EU AI Act, and PCAOB guidance. Key safeguards include: (1) Fresh chat separation - reviewer agents never see builder reasoning, only factual outputs. (2) Multi-model triangulation - independent analysis across different AI platforms. (3) Scientific literature validation - all findings cross-referenced with peer-reviewed research. (4) Adversarial review - devil\'s advocate challenges when agreement exceeds 80%. (5) Risk tiering (T0-T3) - higher-risk work requires more verification layers. (6) Complete audit trails - decision logs, review reports, and model attribution for every analysis.',
+      'We align with global AI governance standards including AICPA Quality Management, EU AI Act, and PCAOB guidance. Key safeguards include: (1) Fresh chat separation - reviewer agents never see builder reasoning, only factual outputs. (2) Multi-model triangulation - independent analysis across different AI platforms. (3) Domain-appropriate evidence validation - all findings cross-referenced with authoritative sources (peer-reviewed research, legal precedent, industry standards, etc.). (4) Adversarial review - devil\'s advocate challenges when agreement exceeds 80%. (5) Risk tiering (T0-T3) - higher-risk work requires more verification layers. (6) Complete audit trails - decision logs, review reports, and model attribution for every analysis.',
   },
   {
     question: 'What is the typical timeline for an analysis?',
     answer:
-      'Timeline varies based on complexity, but most medical/health data analyses take 5-7 business days from initial consultation to report delivery. This includes: intake and problem framing (1 day), literature review and data acquisition (1-2 days), multi-model AI analysis (2-3 days), triangulation and synthesis (1-2 days), and report finalization (1 day). Rush services may be available for time-sensitive situations - contact us to discuss your timeline needs.',
+      'Timeline varies based on complexity and domain, but most analyses take 5-7 business days from initial consultation to report delivery. This includes: intake and problem framing (1 day), domain research and data acquisition (1-2 days), multi-model AI analysis (2-3 days), triangulation and synthesis (1-2 days), and report finalization (1 day). Rush services may be available for time-sensitive situations - contact us to discuss your timeline needs.',
   },
   {
     question: 'What information do I need to provide?',
