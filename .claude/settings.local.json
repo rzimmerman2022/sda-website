@@ -25,10 +25,7 @@
       "Bash(cat:*)",
       "Bash(npm run dev:*)",
       "Bash(findstr:*)",
-      "Bash(git log:*)",
-      "Bash(npm install)",
-      "Bash(lsof:*)",
-      "Bash(python3:*)"
+      "Bash(git pull:*)"
     ],
     "deny": [],
     "ask": []
