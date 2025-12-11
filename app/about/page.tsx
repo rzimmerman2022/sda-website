@@ -135,7 +135,7 @@ export default function AboutPage() {
                     </div>
 
                     <div className="flex justify-center">
-                      <div className="w-px h-6 bg-neutral-200" />
+                      <div className="w-px h-4 bg-neutral-200" />
                     </div>
 
                     {/* Multi-Model Layer */}
@@ -147,7 +147,7 @@ export default function AboutPage() {
                       </div>
 
                       <div className="text-center mb-5">
-                        <span className="text-[11px] text-brand-navy tracking-[0.15em] font-bold uppercase">
+                        <span className="text-xs text-brand-navy/80 tracking-[0.1em] font-semibold uppercase">
                           Precision Protocol™
                         </span>
                       </div>
@@ -193,7 +193,7 @@ export default function AboutPage() {
                     </div>
 
                     <div className="flex justify-center">
-                      <div className="w-px h-6 bg-neutral-200" />
+                      <div className="w-px h-4 bg-neutral-200" />
                     </div>
 
                     <div className="text-center">
